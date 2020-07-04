@@ -136,31 +136,24 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(255, 204, 0));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField1.setText("jTextField1");
 
         jTextField2.setBackground(new java.awt.Color(255, 204, 0));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField2.setText("jTextField2");
 
         jTextField3.setBackground(new java.awt.Color(255, 204, 0));
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField3.setText("jTextField3");
 
         jTextField4.setBackground(new java.awt.Color(255, 204, 0));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField4.setText("jTextField4");
 
         jTextField5.setBackground(new java.awt.Color(255, 204, 0));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField5.setText("jTextField5");
 
         jTextField6.setBackground(new java.awt.Color(255, 204, 0));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField6.setText("jTextField4");
 
         jTextField7.setBackground(new java.awt.Color(255, 204, 0));
         jTextField7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField7.setText("jTextField3");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
