@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b03307b8-c24a-4bbc-8bc7-104c36c11b87" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Reclutador/FichaAdmitidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Reclutador/FichaAdmitidos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Reclutador/FichaEntrevista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Reclutador/FichaEntrevista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Reclutador/ListaPostulantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Reclutador/ListaPostulantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Reclutador/Login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Reclutador/Login.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Reclutador/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Reclutador/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Reclutador/MenuAdmitidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Reclutador/MenuAdmitidos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Reclutador/MenuReclutador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Reclutador/MenuReclutador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Intrefaces/Postulante/IngresoDtosPostulantes.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intrefaces/Postulante/IngresoDtosPostulantes.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Intrefaces/Postulante/IngresoDtosPostulantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intrefaces/Postulante/IngresoDtosPostulantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Intrefaces/Postulante/MenuConvocatoria.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intrefaces/Postulante/MenuConvocatoria.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Intrefaces/Postulante/MenuConvocatoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intrefaces/Postulante/MenuConvocatoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Intrefaces/Postulante/MenuInicial.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intrefaces/Postulante/MenuInicial.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Intrefaces/Postulante/MenuInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intrefaces/Postulante/MenuInicial.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1eCNyNrJBGmBWfLsMIQStwKQfWG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b03307b8-c24a-4bbc-8bc7-104c36c11b87" name="Default Changelist" comment="" />
+      <created>1593821868676</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593821868676</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -16,6 +16,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
      */
     public FichaAdmitidos() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -87,10 +88,12 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Fecha");
 
+        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(255, 204, 102));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField1.setText("jTextField1");
 
+        jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(255, 204, 102));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField2.setText("jTextField2");
@@ -103,6 +106,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Distrito");
 
+        jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(255, 204, 102));
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField3.setText("jTextField3");
@@ -112,6 +116,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
             }
         });
 
+        jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(255, 204, 102));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField4.setText("jTextField4");
@@ -125,6 +130,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Telefono");
 
+        jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(255, 204, 102));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField5.setText("jTextField5");
@@ -133,6 +139,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Correo");
 
+        jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(255, 204, 102));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField6.setText("jTextField6");
