@@ -59,7 +59,9 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
+        jTextArea1.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en la ciudad de Huancayo.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -72,17 +74,23 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextArea2.setRows(5);
+        jTextArea2.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Domingo\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Miraflores,\nSan Isidro, Pueblo Libre.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
         jScrollPane2.setViewportView(jTextArea2);
 
         jTextArea3.setEditable(false);
         jTextArea3.setColumns(20);
+        jTextArea3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextArea3.setRows(5);
+        jTextArea3.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 4 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Cercado de Lima,\nSanta Anita, San Juan de Lurigancho.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
         jScrollPane3.setViewportView(jTextArea3);
 
         jTextArea4.setEditable(false);
         jTextArea4.setColumns(20);
+        jTextArea4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextArea4.setRows(5);
+        jTextArea4.setText("No hay convocatoria en este momento");
         jScrollPane4.setViewportView(jTextArea4);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -113,7 +121,7 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
         jTextField1.setBackground(new java.awt.Color(255, 204, 102));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Convocatoria1");
+        jTextField1.setText("40720SanJuan");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -141,7 +149,7 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
         jTextField4.setBackground(new java.awt.Color(255, 204, 102));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("Convocatoria4");
+        jTextField4.setText("---------");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -164,7 +172,7 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(133, 133, 133))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -286,8 +294,8 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
                                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(282, 282, 282))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
