@@ -122,7 +122,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("04072020SanJuan");
+        jLabel2.setText("04-07-2020SanJuan");
 
         jButton2.setBackground(new java.awt.Color(255, 204, 102));
         jButton2.setText("Postular");
@@ -149,12 +149,12 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("02/06/2020Cercado");
+        jLabel3.setText("02-06-2020Cercado");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("20/05/2020Huancayo");
+        jLabel4.setText("20-05-2020Huancayo");
 
         jTextArea4.setEditable(false);
         jTextArea4.setColumns(20);

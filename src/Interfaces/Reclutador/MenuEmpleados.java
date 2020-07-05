@@ -72,7 +72,7 @@ public class MenuEmpleados extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Nombre", "Puesto", "Fecha"
+                "Nombre", "Puesto", "Tienda"
             }
         ) {
             Class[] types = new Class [] {
