@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package Intrefaces.Postulante;
+import Clases.Convocatoria;
 import Interfaces.Reclutador.Login;
+import java.util.ArrayList;
 /**
  *
  * @author Fernando
@@ -17,6 +19,17 @@ public class MenuInicial extends javax.swing.JFrame {
     public MenuInicial() {
         initComponents();
         this.setLocationRelativeTo(null);
+        ArrayList<Convocatoria> conv1=new ArrayList();
+        conv1=Convocatoria.makeConvocatoriaList();
+        
+        jLabel2.setText(conv1.get(conv1.size()-1).getIdConvocatoria());
+        jTextArea2.setText(conv1.get(conv1.size()-1).getDescripcion());
+        jLabel3.setText(conv1.get(conv1.size()-2).getIdConvocatoria());
+        jTextArea3.setText(conv1.get(conv1.size()-2).getDescripcion());
+        jLabel4.setText(conv1.get(conv1.size()-3).getIdConvocatoria());
+        jTextArea1.setText(conv1.get(conv1.size()-3).getDescripcion());
+        jLabel5.setText(conv1.get(conv1.size()-4).getIdConvocatoria());
+        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());
     }
     public static String titulo = "";
     public static String descripcion = "";
@@ -72,8 +85,6 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CORPORACION SIC");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernando\\Documents\\NetBeansProjects\\ProyectoDatos\\WhatsApp Image 2020-07-03 at 7.57.23 PM.jpeg")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -115,8 +126,10 @@ public class MenuInicial extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en la ciudad de Huancayo.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
+        jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -135,15 +148,19 @@ public class MenuInicial extends javax.swing.JFrame {
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
         jTextArea2.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Domingo\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Miraflores,\nSan Juan de Lurigancho, Puente Piedra.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.\n");
+        jTextArea2.setWrapStyleWord(true);
         jScrollPane2.setViewportView(jTextArea2);
 
         jTextArea3.setEditable(false);
         jTextArea3.setColumns(20);
         jTextArea3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextArea3.setLineWrap(true);
         jTextArea3.setRows(5);
         jTextArea3.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 4 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Cercado de Lima,\nSanta Anita, San Juan de Lurigancho.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
+        jTextArea3.setWrapStyleWord(true);
         jScrollPane3.setViewportView(jTextArea3);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -159,8 +176,10 @@ public class MenuInicial extends javax.swing.JFrame {
         jTextArea4.setEditable(false);
         jTextArea4.setColumns(20);
         jTextArea4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextArea4.setLineWrap(true);
         jTextArea4.setRows(5);
         jTextArea4.setText("No hay convocatoria en este momento");
+        jTextArea4.setWrapStyleWord(true);
         jScrollPane4.setViewportView(jTextArea4);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
