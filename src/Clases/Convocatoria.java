@@ -13,33 +13,33 @@ import java.util.ArrayList;
  * @author Piero
  */
 public class Convocatoria extends ConvocatoriaDAO {
-    private String idConvocatoria;
-    private String fechaConvocatoria;
+    private String id_convocatoria;
+    private String fecha_convocatoria;
     private String descripcion;
 
     public Convocatoria() {
     }
 
-    public Convocatoria(String idConvocatoria, String fechaConvocatoria, String descripcion) {
-        this.idConvocatoria = idConvocatoria;
-        this.fechaConvocatoria = fechaConvocatoria;
+    public Convocatoria(String id_convocatoria, String fecha_convocatoria, String descripcion) {
+        this.id_convocatoria = id_convocatoria;
+        this.fecha_convocatoria = fecha_convocatoria;
         this.descripcion = descripcion;
     }
 
-    public String getIdConvocatoria() {
-        return idConvocatoria;
+    public String getId_convocatoria() {
+        return id_convocatoria;
     }
 
-    public void setIdConvocatoria(String idConvocatoria) {
-        this.idConvocatoria = idConvocatoria;
+    public void setId_convocatoria(String id_convocatoria) {
+        this.id_convocatoria = id_convocatoria;
     }
 
-    public String getFechaConvocatoria() {
-        return fechaConvocatoria;
+    public String getFecha_convocatoria() {
+        return fecha_convocatoria;
     }
 
-    public void setFechaConvocatoria(String fechaConvocatoria) {
-        this.fechaConvocatoria = fechaConvocatoria;
+    public void setFecha_convocatoria(String fecha_convocatoria) {
+        this.fecha_convocatoria = fecha_convocatoria;
     }
 
     public String getDescripcion() {
@@ -49,7 +49,7 @@ public class Convocatoria extends ConvocatoriaDAO {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+  
     public static ArrayList<Convocatoria> makeConvocatoriaList(){
         Convocatoria convocatoria = new Convocatoria();
         

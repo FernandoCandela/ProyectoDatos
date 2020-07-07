@@ -10,35 +10,35 @@ package Clases;
  * @author Piero
  */
 public class Puesto {
-    private String codigoPuesto;
-    private String nombrePuesto;
+    private String codigo;
+    private String nombre;
     private int salario;
     private String horario;
 
     public Puesto() {
     }
 
-    public Puesto(String codigoPuesto, String nombrePuesto, int salario, String horario) {
-        this.codigoPuesto = codigoPuesto;
-        this.nombrePuesto = nombrePuesto;
+    public Puesto(String codigo, String nombre, int salario, String horario) {
+        this.codigo = codigo;
+        this.nombre = nombre;
         this.salario = salario;
         this.horario = horario;
     }
 
-    public String getCodigoPuesto() {
-        return codigoPuesto;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setCodigoPuesto(String codigoPuesto) {
-        this.codigoPuesto = codigoPuesto;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-    public String getNombrePuesto() {
-        return nombrePuesto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombrePuesto(String nombrePuesto) {
-        this.nombrePuesto = nombrePuesto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getSalario() {
@@ -56,6 +56,8 @@ public class Puesto {
     public void setHorario(String horario) {
         this.horario = horario;
     }
+
+    
     
     
 }

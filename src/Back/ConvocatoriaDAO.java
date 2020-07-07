@@ -52,8 +52,8 @@ public class ConvocatoriaDAO extends Conexion{
             String query="INSERT INTO "+ TCONVOCATORIA + " (" 
                     +TCONVOCATORIA_ID + ", "+ TCONVOCATORIA_FECHA + ", "
                     + TCONVOCATORIA_DESCRIPCION + ")" + " VALUES('"
-                    + convocatoria.getIdConvocatoria() + "', '"
-                    + convocatoria.getFechaConvocatoria() + "', '"
+                    + convocatoria.getId_convocatoria() + "', '"
+                    + convocatoria.getFecha_convocatoria() + "', '"
                     +convocatoria.getDescripcion() + "')";
             
             if(statement.executeUpdate(query)>0){

@@ -13,25 +13,24 @@ import java.util.ArrayList;
  * @author Renatto
  */
 public class Tienda extends TiendaDAO {
-    private String nombreTienda;
+    private String nombre;
     private String ubicacion;
 
     public Tienda(){
         
     }
-    
-    public Tienda(String nombreTienda, String ubicacion) {
-        this.nombreTienda = nombreTienda;
+
+    public Tienda(String nombre, String ubicacion) {
+        this.nombre = nombre;
         this.ubicacion = ubicacion;
     }
 
-    
-    public String getNombreTienda() {
-        return nombreTienda;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreTienda(String nombreTienda) {
-        this.nombreTienda = nombreTienda;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getUbicacion() {
@@ -41,7 +40,7 @@ public class Tienda extends TiendaDAO {
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
-    
+      
     public static ArrayList<Tienda> makeTiendaList(){
  
         Tienda tienda = new Tienda();

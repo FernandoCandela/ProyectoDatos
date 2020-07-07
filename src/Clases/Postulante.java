@@ -9,58 +9,74 @@ package Clases;
  *
  * @author Piero
  */
+/*
+public static final String TPOSTULANTE="POSTULANTE";            
+    public static final String TPOSTULANTE_DNI="DNI";
+    public static final String TPOSTULANTE_NOMBRE="NOMBRE_COMPLETO";
+    public static final String TPOSTULANTE_DIRECCION="DIRECCION";
+    public static final String TPOSTULANTE_EDAD="EDAD";
+    public static final String TPOSTULANTE_APROBADO="APROBADO";
+    public static final String TPOSTULANTE_CIUDAD="CIUDAD";
+    public static final String TPOSTULANTE_DISTRITO="DISTRITO";
+    public static final String TPOSTULANTE_PUESTO="PUESTO_POTENCIAL";
+    public static final String TPOSTULANTE_MEDIO="MEDIO_CONVOCATORIA";
+    public static final String TPOSTULANTE_CORREO="CORREO";
+    public static final String TPOSTULANTE_TELEFONO="TELEFONO";
+    public static final String TPOSTULANTE_FECHA_NACIMIENTO="FECHA_NACIMIENTO";
+    public static final String TPOSTULANTE_CONVOCATORIA="ID_CONVOCATORIA";
+    public static final String TPOSTULANTE_ENTREVISTA="CODIGO_ENTREVISTA";
+*/
+
 public class Postulante {
-    private String dniPostulante;
-    private String nombrePostulante;
+    private String dni;
+    private String nombre;
     private String direccion;
     private int edad;
     private boolean aprobado;
     private String ciudad;
     private String distrito;
-    private String puestoPotencial;
-    private String medioConvocatoria;
+    private String puesto_potencial;
+    private String medio_convocatoria;
     private String correo;
     private String telefono;
     private String fecha_nac;
-    private String idConvocatoria;
+    private String id_convocatoria;
     private String cod_entrevista;
 
     public Postulante() {
     }
 
-    public Postulante(String dniPostulante, String nombrePostulante, String direccion, int edad, boolean aprobado, String ciudad, String distrito, String puestoPotencial, String medioConvocatoria, String correo, String telefono, String fecha_nac, String idConvocatoria, String cod_entrevista) {
-        this.dniPostulante = dniPostulante;
-        this.nombrePostulante = nombrePostulante;
+    public Postulante(String dni, String nombre, String direccion, int edad, boolean aprobado, String ciudad, String distrito, String puesto_potencial, String medio_convocatoria, String correo, String telefono, String fecha_nac, String id_convocatoria, String cod_entrevista) {
+        this.dni = dni;
+        this.nombre = nombre;
         this.direccion = direccion;
         this.edad = edad;
         this.aprobado = aprobado;
         this.ciudad = ciudad;
         this.distrito = distrito;
-        this.puestoPotencial = puestoPotencial;
-        this.medioConvocatoria = medioConvocatoria;
+        this.puesto_potencial = puesto_potencial;
+        this.medio_convocatoria = medio_convocatoria;
         this.correo = correo;
         this.telefono = telefono;
         this.fecha_nac = fecha_nac;
-        this.idConvocatoria = idConvocatoria;
+        this.id_convocatoria = id_convocatoria;
         this.cod_entrevista = cod_entrevista;
     }
-    
-    
 
-    public String getDniPostulante() {
-        return dniPostulante;
+    public String getDni() {
+        return dni;
     }
 
-    public void setDniPostulante(String dniPostulante) {
-        this.dniPostulante = dniPostulante;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
-    public String getNombrePostulante() {
-        return nombrePostulante;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombrePostulante(String nombrePostulante) {
-        this.nombrePostulante = nombrePostulante;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDireccion() {
@@ -103,20 +119,20 @@ public class Postulante {
         this.distrito = distrito;
     }
 
-    public String getPuestoPotencial() {
-        return puestoPotencial;
+    public String getPuesto_potencial() {
+        return puesto_potencial;
     }
 
-    public void setPuestoPotencial(String puestoPotencial) {
-        this.puestoPotencial = puestoPotencial;
+    public void setPuesto_potencial(String puesto_potencial) {
+        this.puesto_potencial = puesto_potencial;
     }
 
-    public String getMedioConvocatoria() {
-        return medioConvocatoria;
+    public String getMedio_convocatoria() {
+        return medio_convocatoria;
     }
 
-    public void setMedioConvocatoria(String medioConvocatoria) {
-        this.medioConvocatoria = medioConvocatoria;
+    public void setMedio_convocatoria(String medio_convocatoria) {
+        this.medio_convocatoria = medio_convocatoria;
     }
 
     public String getCorreo() {
@@ -143,12 +159,12 @@ public class Postulante {
         this.fecha_nac = fecha_nac;
     }
 
-    public String getIdConvocatoria() {
-        return idConvocatoria;
+    public String getId_convocatoria() {
+        return id_convocatoria;
     }
 
-    public void setIdConvocatoria(String idConvocatoria) {
-        this.idConvocatoria = idConvocatoria;
+    public void setId_convocatoria(String id_convocatoria) {
+        this.id_convocatoria = id_convocatoria;
     }
 
     public String getCod_entrevista() {
@@ -158,6 +174,8 @@ public class Postulante {
     public void setCod_entrevista(String cod_entrevista) {
         this.cod_entrevista = cod_entrevista;
     }
+
+    
     
     
 }

@@ -23,7 +23,7 @@ public class TrabajoDatos {
         ArrayList<Tienda> aux= new ArrayList();
         aux=Tienda.makeTiendaList();
         for(int i=0;i<aux.size();i++){
-            System.out.println("Nombre: "+aux.get(i).getNombreTienda());
+            System.out.println("Nombre: "+aux.get(i).getNombre());
             System.out.println("Ubicacion: " + aux.get(i).getUbicacion());
             System.out.println("");
         }
@@ -31,10 +31,10 @@ public class TrabajoDatos {
         ArrayList<Convocatoria> conv1=new ArrayList();
         conv1=Convocatoria.makeConvocatoriaList();
         
-        System.out.println("id: "+conv1.get(conv1.size()-1).getIdConvocatoria());
-        System.out.println("id: "+conv1.get(conv1.size()-2).getIdConvocatoria());
-        System.out.println("id: "+conv1.get(conv1.size()-3).getIdConvocatoria());
-        System.out.println("id: "+conv1.get(conv1.size()-4).getIdConvocatoria());
+        System.out.println("id: "+conv1.get(conv1.size()-1).getId_convocatoria());
+        System.out.println("id: "+conv1.get(conv1.size()-2).getId_convocatoria());
+        System.out.println("id: "+conv1.get(conv1.size()-3).getId_convocatoria());
+        System.out.println("id: "+conv1.get(conv1.size()-4).getId_convocatoria());
         
         /*for(int i=0;i<conv1.size();i++){
             System.out.println("id: "+conv1.get(i).getIdConvocatoria());

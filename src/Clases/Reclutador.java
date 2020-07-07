@@ -10,35 +10,31 @@ package Clases;
  * @author Piero
  */
 public class Reclutador {
-    private String dniReclutador;
-    private String nombreCompleto;
+    private String dni;
+    private String nombre_completo;
 
     public Reclutador() {
     }
 
-    public Reclutador(String dniReclutador, String nombreCompleto) {
-        this.dniReclutador = dniReclutador;
-        this.nombreCompleto = nombreCompleto;
+    public Reclutador(String dni, String nombre_completo) {
+        this.dni = dni;
+        this.nombre_completo = nombre_completo;
     }
 
-    public String getDniReclutador() {
-        return dniReclutador;
+    public String getDni() {
+        return dni;
     }
 
-    public void setDniReclutador(String dniReclutador) {
-        this.dniReclutador = dniReclutador;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getNombre_completo() {
+        return nombre_completo;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setNombre_completo(String nombre_completo) {
+        this.nombre_completo = nombre_completo;
     }
-    
-    
-    
-    
     
 }
