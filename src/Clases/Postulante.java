@@ -31,8 +31,8 @@ public class Postulante {
     private String dni;
     private String nombre;
     private String direccion;
-    private int edad;
-    private boolean aprobado;
+    private Integer edad;
+    private String aprobado;
     private String ciudad;
     private String distrito;
     private String puesto_potencial;
@@ -46,7 +46,9 @@ public class Postulante {
     public Postulante() {
     }
 
-    public Postulante(String dni, String nombre, String direccion, int edad, boolean aprobado, String ciudad, String distrito, String puesto_potencial, String medio_convocatoria, String correo, String telefono, String fecha_nac, String id_convocatoria, String cod_entrevista) {
+    public Postulante(String dni, String nombre, String direccion, Integer edad,String aprobado, 
+            String ciudad, String distrito, String puesto_potencial, String medio_convocatoria, 
+            String correo, String telefono, String fecha_nac, String id_convocatoria, String cod_entrevista) {
         this.dni = dni;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -87,19 +89,19 @@ public class Postulante {
         this.direccion = direccion;
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
-    public boolean isAprobado() {
+    public String isAprobado() {
         return aprobado;
     }
 
-    public void setAprobado(boolean aprobado) {
+    public void setAprobado(String aprobado) {
         this.aprobado = aprobado;
     }
 

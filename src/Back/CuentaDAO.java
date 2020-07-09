@@ -5,11 +5,13 @@
  */
 package Back;
 
-import Clases.Tienda;
-import static DB.DataBase.TTIENDA;
-import static DB.DataBase.TTIENDA_NOMBRE;
-import static DB.DataBase.TTIENDA_UBICACION;
+import Clases.Cuenta;
+import static DB.DataBase.TCUENTA;
+import static DB.DataBase.TCUENTA_DNI;
+import static DB.DataBase.TCUENTA_PASSWORD;
+import static DB.DataBase.TCUENTA_USER;
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,27 +21,26 @@ import java.util.ArrayList;
  *
  * @author Renatto
  */
-public class TiendaDAO extends Conexion{
+public class CuentaDAO extends Conexion{
     
-     public ArrayList<Tienda> read(){
-       ArrayList<Tienda> tiendas = new ArrayList();
+    public ArrayList <Cuenta> read(){
+        ArrayList<Cuenta> cuentas = new ArrayList();
        try(Connection connection = get_connection()){
            
-           String query = "SELECT * FROM " + TTIENDA;
+           String query = "SELECT * FROM " + TCUENTA;
            PreparedStatement preparedStatement = connection. prepareStatement(query);
            ResultSet rs = preparedStatement.executeQuery();
            
            while(rs.next()){
-               Tienda tienda= new Tienda(
-                                rs.getString(TTIENDA_NOMBRE),
-                                rs.getString(TTIENDA_UBICACION));
-               tiendas.add(tienda);
+               Cuenta cuenta= new Cuenta(
+                                rs.getString(TCUENTA_DNI),
+                                rs.getString(TCUENTA_USER),
+                                rs.getString(TCUENTA_PASSWORD));
+               cuentas.add(cuenta);
            }
        }catch(SQLException e){
-            e.printStackTrace();
-
+           e.printStackTrace();
        }
-       return tiendas;
-       
+       return cuentas;
     }
 }

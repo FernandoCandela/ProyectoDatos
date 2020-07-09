@@ -19,17 +19,17 @@ public class MenuInicial extends javax.swing.JFrame {
     public MenuInicial() {
         initComponents();
         this.setLocationRelativeTo(null);
-        ArrayList<Convocatoria> conv1=new ArrayList();
+        /*ArrayList<Convocatoria> conv1=new ArrayList();
         conv1=Convocatoria.makeConvocatoriaList();
         
-        jLabel2.setText(conv1.get(conv1.size()-1).getIdConvocatoria());
+        jLabel2.setText(conv1.get(conv1.size()-1).getId_convocatoria());
         jTextArea2.setText(conv1.get(conv1.size()-1).getDescripcion());
-        jLabel3.setText(conv1.get(conv1.size()-2).getIdConvocatoria());
+        jLabel3.setText(conv1.get(conv1.size()-2).getId_convocatoria());
         jTextArea3.setText(conv1.get(conv1.size()-2).getDescripcion());
-        jLabel4.setText(conv1.get(conv1.size()-3).getIdConvocatoria());
+        jLabel4.setText(conv1.get(conv1.size()-3).getId_convocatoria());
         jTextArea1.setText(conv1.get(conv1.size()-3).getDescripcion());
-        jLabel5.setText(conv1.get(conv1.size()-4).getIdConvocatoria());
-        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());
+        jLabel5.setText(conv1.get(conv1.size()-4).getId_convocatoria());
+        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());*/
     }
     public static String titulo = "";
     public static String descripcion = "";
