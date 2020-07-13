@@ -5,6 +5,9 @@
  */
 package Interfaces.Reclutador;
 
+import Clases.Postulante;
+import java.util.ArrayList;
+
 /**
  *
  * @author Fernando
@@ -15,15 +18,19 @@ public class ListaPostulantes extends javax.swing.JFrame {
      * Creates new form ListaPostulantes
      */
     public ListaPostulantes() {
+        
         initComponents();
         this.setLocationRelativeTo(null);
         MenuConvocatoriaR menuCR = new MenuConvocatoriaR();
         jLabel1.setText(menuCR.titulo);
-        
+        for (int i = 0; i < postulantes.size(); i++) {
+  
+        }
+       
         
     }
     public static String nombre = "";
-    
+    public static ArrayList<Postulante> postulantes=new ArrayList();
     
 
     /**

@@ -19,7 +19,6 @@ public class MenuInicial extends javax.swing.JFrame {
     public MenuInicial() {
         initComponents();
         this.setLocationRelativeTo(null);
-        /*ArrayList<Convocatoria> conv1=new ArrayList();
         conv1=Convocatoria.makeConvocatoriaList();
         
         jLabel2.setText(conv1.get(conv1.size()-1).getId_convocatoria());
@@ -29,10 +28,12 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel4.setText(conv1.get(conv1.size()-3).getId_convocatoria());
         jTextArea1.setText(conv1.get(conv1.size()-3).getDescripcion());
         jLabel5.setText(conv1.get(conv1.size()-4).getId_convocatoria());
-        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());*/
+        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());
     }
     public static String titulo = "";
     public static String descripcion = "";
+    public static String fecha = "";
+    public static ArrayList<Convocatoria> conv1=new ArrayList();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -346,6 +347,7 @@ public class MenuInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         titulo = jLabel2.getText();
         descripcion = jTextArea2.getText();
+        fecha = conv1.get(conv1.size()-1).getFecha_convocatoria();
         MenuConvocatoria mConvocatoria = new MenuConvocatoria();
         mConvocatoria.setVisible(true);
         
@@ -358,6 +360,7 @@ public class MenuInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         titulo = jLabel3.getText();
         descripcion = jTextArea3.getText();
+        fecha = conv1.get(conv1.size()-2).getFecha_convocatoria();
         MenuConvocatoria mConvocatoria = new MenuConvocatoria();
         mConvocatoria.setVisible(true);
         this.dispose();
@@ -368,6 +371,7 @@ public class MenuInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         titulo = jLabel4.getText();
         descripcion = jTextArea1.getText();
+        fecha = conv1.get(conv1.size()-1).getFecha_convocatoria();
         MenuConvocatoria mConvocatoria = new MenuConvocatoria();
         mConvocatoria.setVisible(true);
         this.dispose();
@@ -378,6 +382,7 @@ public class MenuInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         titulo = jLabel5.getText();
         descripcion = jTextArea4.getText();
+        fecha = conv1.get(conv1.size()-1).getFecha_convocatoria();
         MenuConvocatoria mConvocatoria = new MenuConvocatoria();
         mConvocatoria.setVisible(true);
         this.dispose();

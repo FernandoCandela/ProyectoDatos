@@ -21,8 +21,10 @@ public class MenuConvocatoria extends javax.swing.JFrame {
         
         jLabel1.setText(menu.titulo);
         jTextArea1.setText(menu.descripcion);
+        jTextField1.setText(menu.fecha);
     }
     public static String puesto = "";
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
