@@ -14,7 +14,7 @@ public class Empleado {
     private String dni;
     private String nombre_completo;
     private String direccion;
-    private String edad;
+    private Integer edad;;
     private String ciudad;
     private String distrito;
     private String correo;
@@ -28,7 +28,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(String dni, String nombre_completo, String direccion, String edad, String ciudad, String distrito, String correo, String telefono, String fecha_nacimiento, String cuenta_banco, String afp, String codigo_entrevista, String nombre_tienda) {
+    public Empleado(String dni, String nombre_completo, String direccion, Integer edad, String ciudad, String distrito, String correo, String telefono, String fecha_nacimiento, String cuenta_banco, String afp, String codigo_entrevista, String nombre_tienda) {
         this.dni = dni;
         this.nombre_completo = nombre_completo;
         this.direccion = direccion;
@@ -68,11 +68,11 @@ public class Empleado {
         this.direccion = direccion;
     }
 
-    public String getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 

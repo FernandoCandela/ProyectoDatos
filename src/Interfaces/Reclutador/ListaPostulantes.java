@@ -7,6 +7,7 @@ package Interfaces.Reclutador;
 
 import Clases.Postulante;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -23,15 +24,23 @@ public class ListaPostulantes extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         MenuConvocatoriaR menuCR = new MenuConvocatoriaR();
         jLabel1.setText(menuCR.titulo);
-        for (int i = 0; i < postulantes.size(); i++) {
-  
+        
+        //postulantes de prueba
+        Postulante p1 = new Postulante("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"0","Lima","Surco","Vendedor Full-Time","Computrabajo","paloma@hotmail.com","999999999","20/07/2001","0003","0001");
+        Postulante p2 = new Postulante("70948592","Daniela Acevedo","Av. Proceres",19,"0","Lima","Surco","Vendedor Part-Time","Indeed","daniela@hotmail.com","999999999","25/07/2001","0004","0001");
+        post1.add(p1);
+        post1.add(p2);
+        
+        //falta conectar el arraylist post1 a la base de datos
+        DefaultListModel modelo = new DefaultListModel();
+        for (int i = 0; i < post1.size(); i++) {
+            modelo.addElement(post1.get(i).getNombre());
         }
-       
+        jList1.setModel(modelo);
         
     }
     public static String nombre = "";
-    public static ArrayList<Postulante> postulantes=new ArrayList();
-    
+    public static ArrayList<Postulante> post1=new ArrayList();
 
     /**
      * This method is called from within the constructor to initialize the form.
