@@ -41,6 +41,7 @@ public class ListaPostulantes extends javax.swing.JFrame {
     }
     public static String nombre = "";
     public static ArrayList<Postulante> post1=new ArrayList();
+    public static Postulante pSelec = new Postulante();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -192,6 +193,8 @@ public class ListaPostulantes extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         nombre = jList1.getSelectedValue();
+        int pos = jList1.getSelectedIndex();
+        pSelec = post1.get(pos); 
         FichaEntrevista fichaE = new FichaEntrevista();
         fichaE.setVisible(true);
         this.dispose();

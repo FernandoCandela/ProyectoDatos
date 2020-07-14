@@ -6,6 +6,10 @@
 package Intrefaces.Postulante;
 
 import Clases.Postulante;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -19,14 +23,13 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
     public IngresoDtosPostulantes() {
         initComponents();
         this.setLocationRelativeTo(null);
-          MenuInicial menu = new  MenuInicial();
+        /*  MenuInicial menu = new  MenuInicial();
           MenuConvocatoria menuC = new MenuConvocatoria();
         
         jLabel1.setText(menu.titulo);
-        jLabel12.setText(menuC.puesto);
+        jLabel12.setText(menuC.puesto);*/
        
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,9 +64,9 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jMedioCon = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
+        btnEnviar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -268,24 +271,24 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        jButton4.setText("Borrar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnBorrarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Enviar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEnviar.setText("Enviar");
+        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEnviarActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Volver");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnVolverActionPerformed(evt);
             }
         });
 
@@ -295,11 +298,11 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
         );
         jPanel4Layout.setVerticalGroup(
@@ -307,9 +310,9 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -346,7 +349,7 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
         MenuConvocatoria menuC = new MenuConvocatoria();
         menuC.setVisible(true);
@@ -354,13 +357,13 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jMedioConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMedioConActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMedioConActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         // TODO add your handling code here:
         jNombreApellidos.setText(null);
         jDni.setText(null);
@@ -373,14 +376,13 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         jFechaNac.setDate(null);
         
         
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnBorrarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
         
         Postulante postulante = new Postulante();
         postulante.setNombre(jNombreApellidos.getText());
-        postulante.setFecha_nac(jFechaNac.getDateFormatString());
         postulante.setDni(jDni.getText());
         postulante.setCorreo(jCorreo.getText());
         postulante.setTelefono(jTelefono.getText());
@@ -391,13 +393,24 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         postulante.setMedio_convocatoria((String)jMedioCon.getSelectedItem());
         postulante.setAprobado("0");
         postulante.setPuesto_potencial(jLabel12.getText());
-        //Enviar a la base de datos y asignar el codigo de entrevista.
         
+        // Jala la fecha del objeto y la convierte a string
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String fechaComoCadena = sdf.format(jFechaNac.getDate());
         
-    
+        postulante.setFecha_nac(fechaComoCadena);
         
+        // Resta la fecha actual con la fecha nac y halla edad
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fechaNac = LocalDate.parse(fechaComoCadena, fmt);
+        LocalDate ahora = LocalDate.now();
+        Period periodo = Period.between(fechaNac, ahora);
+        int edad = periodo.getYears();
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+        postulante.setEdad(edad);
+        
+        // FALTA ASIGNAR CODIGO DE ENTREVISTA (LO ASIGNA AUTOMATICAMENTE LA BD???)
+    }//GEN-LAST:event_btnEnviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -438,9 +451,9 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnEnviar;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JTextField jCiudad;
     private javax.swing.JTextField jCorreo;
     private com.toedter.calendar.JDayChooser jDayChooser1;
