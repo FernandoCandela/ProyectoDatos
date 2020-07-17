@@ -33,7 +33,7 @@ public class ConvocatoriaDAO extends Conexion{
            
            while(rs.next()){
                Convocatoria convocatoria= new Convocatoria(
-                                rs.getString(TCONVOCATORIA_ID),
+                                Integer.valueOf(rs.getString(TCONVOCATORIA_ID)),
                                 rs.getString(TCONVOCATORIA_FECHA),
                                 rs.getString(TCONVOCATORIA_DESCRIPCION));
               convocatorias.add(convocatoria);

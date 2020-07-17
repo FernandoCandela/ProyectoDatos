@@ -19,21 +19,36 @@ public class MenuInicial extends javax.swing.JFrame {
     public MenuInicial() {
         initComponents();
         this.setLocationRelativeTo(null);
-        conv1=Convocatoria.makeConvocatoriaList();
+//        conv1=Convocatoria.makeConvocatoriaList();
         
-        jLabel2.setText(conv1.get(conv1.size()-1).getId_convocatoria());
-        jTextArea2.setText(conv1.get(conv1.size()-1).getDescripcion());
-        jLabel3.setText(conv1.get(conv1.size()-2).getId_convocatoria());
-        jTextArea3.setText(conv1.get(conv1.size()-2).getDescripcion());
-        jLabel4.setText(conv1.get(conv1.size()-3).getId_convocatoria());
-        jTextArea1.setText(conv1.get(conv1.size()-3).getDescripcion());
-        jLabel5.setText(conv1.get(conv1.size()-4).getId_convocatoria());
-        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());
+        //prueba
+        Convocatoria c1 = new Convocatoria(703,"20/07/2001","pruebaaa");
+        Convocatoria c2 = new Convocatoria(709,"25/07/2002","pruebaaaaaaaa");
+        Convocatoria c3 = new Convocatoria(710,"25/07/2003","pruebaaaaaaaaa");
+        Convocatoria c4 = new Convocatoria(711,"25/07/2004","pruebaaaaaaaaaa");
+        Convocatoria c5 = new Convocatoria(712,"25/07/2005","pruebaaaaaaaaaaaa");
+        conv1.add(c1);
+        conv1.add(c2);
+        conv1.add(c3);
+        conv1.add(c4);
+        conv1.add(c5);
+        
+        txtId1.setText(Integer.toString(conv1.get(conv1.size()-1).getId_convocatoria()));
+        txtConv1.setText(conv1.get(conv1.size()-1).getDescripcion());
+        txtId2.setText(Integer.toString(conv1.get(conv1.size()-2).getId_convocatoria()));
+        txtConv2.setText(conv1.get(conv1.size()-2).getDescripcion());
+        txtId3.setText(Integer.toString(conv1.get(conv1.size()-3).getId_convocatoria()));
+        txtConv3.setText(conv1.get(conv1.size()-3).getDescripcion());
+        txtId4.setText(Integer.toString(conv1.get(conv1.size()-4).getId_convocatoria()));
+        txtConv4.setText(conv1.get(conv1.size()-4).getDescripcion());
+
+        
     }
     public static String titulo = "";
     public static String descripcion = "";
     public static String fecha = "";
     public static ArrayList<Convocatoria> conv1=new ArrayList();
+    public static Convocatoria cSelec = new Convocatoria();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,18 +67,18 @@ public class MenuInicial extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        txtConv3 = new javax.swing.JTextArea();
+        txtId1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtConv1 = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        txtConv2 = new javax.swing.JTextArea();
+        txtId2 = new javax.swing.JLabel();
+        txtId3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
+        txtConv4 = new javax.swing.JTextArea();
+        txtId4 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -124,19 +139,19 @@ public class MenuInicial extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en la ciudad de Huancayo.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtConv3.setEditable(false);
+        txtConv3.setColumns(20);
+        txtConv3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtConv3.setLineWrap(true);
+        txtConv3.setRows(5);
+        txtConv3.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en la ciudad de Huancayo.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
+        txtConv3.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(txtConv3);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("04-07-2020SanJuan");
+        txtId1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtId1.setForeground(new java.awt.Color(255, 255, 255));
+        txtId1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtId1.setText("04-07-2020SanJuan");
 
         jButton2.setBackground(new java.awt.Color(255, 204, 102));
         jButton2.setText("Postular");
@@ -146,47 +161,47 @@ public class MenuInicial extends javax.swing.JFrame {
             }
         });
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Domingo\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Miraflores,\nSan Juan de Lurigancho, Puente Piedra.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.\n");
-        jTextArea2.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtConv1.setEditable(false);
+        txtConv1.setColumns(20);
+        txtConv1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtConv1.setLineWrap(true);
+        txtConv1.setRows(5);
+        txtConv1.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Domingo\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Miraflores,\nSan Juan de Lurigancho, Puente Piedra.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.\n");
+        txtConv1.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(txtConv1);
 
-        jTextArea3.setEditable(false);
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 4 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Cercado de Lima,\nSanta Anita, San Juan de Lurigancho.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
-        jTextArea3.setWrapStyleWord(true);
-        jScrollPane3.setViewportView(jTextArea3);
+        txtConv2.setEditable(false);
+        txtConv2.setColumns(20);
+        txtConv2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtConv2.setLineWrap(true);
+        txtConv2.setRows(5);
+        txtConv2.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 4 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Cercado de Lima,\nSanta Anita, San Juan de Lurigancho.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
+        txtConv2.setWrapStyleWord(true);
+        jScrollPane3.setViewportView(txtConv2);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("02-06-2020Cercado");
+        txtId2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtId2.setForeground(new java.awt.Color(255, 255, 255));
+        txtId2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtId2.setText("02-06-2020Cercado");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("20-05-2020Huancayo");
+        txtId3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtId3.setForeground(new java.awt.Color(255, 255, 255));
+        txtId3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtId3.setText("20-05-2020Huancayo");
 
-        jTextArea4.setEditable(false);
-        jTextArea4.setColumns(20);
-        jTextArea4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextArea4.setLineWrap(true);
-        jTextArea4.setRows(5);
-        jTextArea4.setText("No hay convocatoria en este momento");
-        jTextArea4.setWrapStyleWord(true);
-        jScrollPane4.setViewportView(jTextArea4);
+        txtConv4.setEditable(false);
+        txtConv4.setColumns(20);
+        txtConv4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtConv4.setLineWrap(true);
+        txtConv4.setRows(5);
+        txtConv4.setText("No hay convocatoria en este momento");
+        txtConv4.setWrapStyleWord(true);
+        jScrollPane4.setViewportView(txtConv4);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("------");
+        txtId4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtId4.setForeground(new java.awt.Color(255, 255, 255));
+        txtId4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtId4.setText("------");
 
         jButton3.setBackground(new java.awt.Color(255, 204, 102));
         jButton3.setText("Postular");
@@ -219,10 +234,10 @@ public class MenuInicial extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtId2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtId1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtId3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtId4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,9 +263,9 @@ public class MenuInicial extends javax.swing.JFrame {
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtId1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(105, 105, 105)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtId2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
@@ -259,9 +274,9 @@ public class MenuInicial extends javax.swing.JFrame {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(69, 69, 69)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtId3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(109, 109, 109)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtId4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(60, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
@@ -345,9 +360,14 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        titulo = jLabel2.getText();
-        descripcion = jTextArea2.getText();
+        titulo = txtId1.getText();
+        descripcion = txtConv1.getText();
         fecha = conv1.get(conv1.size()-1).getFecha_convocatoria();
+        
+        cSelec = conv1.get(conv1.size()-1);
+        
+        
+        
         MenuConvocatoria mConvocatoria = new MenuConvocatoria();
         mConvocatoria.setVisible(true);
         
@@ -358,9 +378,11 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        titulo = jLabel3.getText();
-        descripcion = jTextArea3.getText();
+        titulo = txtId2.getText();
+        descripcion = txtConv2.getText();
         fecha = conv1.get(conv1.size()-2).getFecha_convocatoria();
+        
+        cSelec = conv1.get(conv1.size()-2);
         MenuConvocatoria mConvocatoria = new MenuConvocatoria();
         mConvocatoria.setVisible(true);
         this.dispose();
@@ -369,9 +391,11 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        titulo = jLabel4.getText();
-        descripcion = jTextArea1.getText();
-        fecha = conv1.get(conv1.size()-1).getFecha_convocatoria();
+        titulo = txtId3.getText();
+        descripcion = txtConv3.getText();
+        fecha = conv1.get(conv1.size()-3).getFecha_convocatoria();
+        
+        cSelec = conv1.get(conv1.size()-3);
         MenuConvocatoria mConvocatoria = new MenuConvocatoria();
         mConvocatoria.setVisible(true);
         this.dispose();
@@ -380,9 +404,11 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        titulo = jLabel5.getText();
-        descripcion = jTextArea4.getText();
-        fecha = conv1.get(conv1.size()-1).getFecha_convocatoria();
+        titulo = txtId4.getText();
+        descripcion = txtConv4.getText();
+        fecha = conv1.get(conv1.size()-4).getFecha_convocatoria();
+        
+        cSelec = conv1.get(conv1.size()-4);
         MenuConvocatoria mConvocatoria = new MenuConvocatoria();
         mConvocatoria.setVisible(true);
         this.dispose();
@@ -436,10 +462,6 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -448,9 +470,13 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea txtConv1;
+    private javax.swing.JTextArea txtConv2;
+    private javax.swing.JTextArea txtConv3;
+    private javax.swing.JTextArea txtConv4;
+    private javax.swing.JLabel txtId1;
+    private javax.swing.JLabel txtId2;
+    private javax.swing.JLabel txtId3;
+    private javax.swing.JLabel txtId4;
     // End of variables declaration//GEN-END:variables
 }

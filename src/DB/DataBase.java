@@ -13,7 +13,7 @@ public class DataBase {
     
     //CONTRATO
     public static final String TCONTRATO="CONTRATO";
-    public static final String TCONTRATO_CODIGO="CODIGO_CONTRATO00";
+    public static final String TCONTRATO_CODIGO="CODIGO_CONTRATO";
     public static final String TCONTRATO_FECHA_INICIO="FECHA_INICIO";
     public static final String TCONTRATO_FECHA_FIN="FECHA_FIN";
     public static final String TCONTRATO_TIPO="TIPO";

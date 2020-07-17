@@ -177,6 +177,11 @@ public class Postulante {
         this.cod_entrevista = cod_entrevista;
     }
 
+    @Override
+    public String toString() {
+        return "Postulante{" + "dni=" + dni + ", nombre=" + nombre + ", direccion=" + direccion + ", edad=" + edad + ", aprobado=" + aprobado + ", ciudad=" + ciudad + ", distrito=" + distrito + ", puesto_potencial=" + puesto_potencial + ", medio_convocatoria=" + medio_convocatoria + ", correo=" + correo + ", telefono=" + telefono + ", fecha_nac=" + fecha_nac + ", id_convocatoria=" + id_convocatoria + ", cod_entrevista=" + cod_entrevista + '}';
+    }
+
     
     
     

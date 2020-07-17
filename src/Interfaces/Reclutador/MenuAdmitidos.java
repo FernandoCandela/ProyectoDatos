@@ -21,25 +21,28 @@ public class MenuAdmitidos extends javax.swing.JFrame {
     public MenuAdmitidos() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+        post1.clear();
         //postulantes de prueba
-        Postulante p1 = new Postulante("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"0","Lima","Surco","Vendedor Full-Time","Computrabajo","paloma@hotmail.com","999999999","20/07/2001","0003","0001");
-        Postulante p2 = new Postulante("70948592","Daniela Acevedo","Av. Proceres",19,"0","Lima","Surco","Vendedor Part-Time","Indeed","daniela@hotmail.com","999999999","25/07/2001","0004","0001");
+        Postulante p1 = new Postulante("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"1","Lima","Surco","Vendedor Full-Time","Computrabajo","paloma@hotmail.com","999999999","20/07/2001","0003","0001");
+        Postulante p2 = new Postulante("70948592","Daniela Acevedo","Av. Proceres",19,"1","Lima","Surco","Vendedor Part-Time","Indeed","daniela@hotmail.com","999999999","25/07/2001","0004","0001");
         post1.add(p1);
         post1.add(p2);
         
         //falta conectar el arraylist post1 a la base de datos
         //POSTULANTES TIENEN QUE TENER APROBADO EN 1 PARA SER ADMITIDOS
         //Falta poner la fecha de la entrevista del postulante
+        
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        
         for (int i = 0; i < post1.size(); i++) {
             Postulante pActual = post1.get(i);
-            modelo.addRow(new Object[] {pActual.getNombre(),pActual.getPuesto_potencial(),"Fecha-entrevista"});
+            modelo.addRow(new Object[] {pActual.getNombre(),pActual.getPuesto_potencial(),"--Fecha q esta en entrevista"});
         }
+        
+        
     }
-    public static String nombre = "";
     public static ArrayList<Postulante> post1=new ArrayList();
-    
+    public static Postulante p1 = new Postulante();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -101,10 +104,7 @@ public class MenuAdmitidos extends javax.swing.JFrame {
         jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Nombre", "Puesto", "Fecha"
@@ -188,6 +188,14 @@ public class MenuAdmitidos extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        int pos = jTable1.getSelectedRow();
+        for (int i = 0; i < post1.size(); i++) {
+            if (i == pos) {
+                p1 = post1.get(i);
+                break;
+            }
+        }
+        System.out.println(p1.getNombre());
         
         FichaAdmitidos fichaA = new FichaAdmitidos();
         fichaA.setVisible(true);

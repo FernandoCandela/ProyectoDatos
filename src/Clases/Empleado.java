@@ -148,6 +148,11 @@ public class Empleado {
         this.nombre_tienda = nombre_tienda;
     }
 
+    @Override
+    public String toString() {
+        return "Empleado{" + "dni=" + dni + ", nombre_completo=" + nombre_completo + ", direccion=" + direccion + ", edad=" + edad + ", ciudad=" + ciudad + ", distrito=" + distrito + ", correo=" + correo + ", telefono=" + telefono + ", fecha_nacimiento=" + fecha_nacimiento + ", cuenta_banco=" + cuenta_banco + ", afp=" + afp + ", codigo_entrevista=" + codigo_entrevista + ", nombre_tienda=" + nombre_tienda + '}';
+    }
+
     
     
     

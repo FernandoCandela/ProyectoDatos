@@ -20,16 +20,16 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
     public MenuConvocatoriaR() {
         initComponents();
         this.setLocationRelativeTo(null);
-        conv1=Convocatoria.makeConvocatoriaList();
-        
-        jLabel2.setText(conv1.get(conv1.size()-1).getId_convocatoria());
-        jTextArea2.setText(conv1.get(conv1.size()-1).getDescripcion());
-        jLabel3.setText(conv1.get(conv1.size()-2).getId_convocatoria());
-        jTextArea3.setText(conv1.get(conv1.size()-2).getDescripcion());
-        jLabel4.setText(conv1.get(conv1.size()-3).getId_convocatoria());
-        jTextArea1.setText(conv1.get(conv1.size()-3).getDescripcion());
-        jLabel5.setText(conv1.get(conv1.size()-4).getId_convocatoria());
-        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());
+//        conv1=Convocatoria.makeConvocatoriaList();
+//        
+//        jLabel2.setText(conv1.get(conv1.size()-1).getId_convocatoria());
+//        jTextArea2.setText(conv1.get(conv1.size()-1).getDescripcion());
+//        jLabel3.setText(conv1.get(conv1.size()-2).getId_convocatoria());
+//        jTextArea3.setText(conv1.get(conv1.size()-2).getDescripcion());
+//        jLabel4.setText(conv1.get(conv1.size()-3).getId_convocatoria());
+//        jTextArea1.setText(conv1.get(conv1.size()-3).getDescripcion());
+//        jLabel5.setText(conv1.get(conv1.size()-4).getId_convocatoria());
+//        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());
     }
     public static String titulo = "";
     public static String descripcion = "";
@@ -81,7 +81,7 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setText("Ver Postuntes");
+        jButton2.setText("Ver Postulantes");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

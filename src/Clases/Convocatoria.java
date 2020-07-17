@@ -13,24 +13,24 @@ import java.util.ArrayList;
  * @author Piero
  */
 public class Convocatoria extends ConvocatoriaDAO {
-    private String id_convocatoria;
+    private Integer id_convocatoria;
     private String fecha_convocatoria;
     private String descripcion;
 
     public Convocatoria() {
     }
 
-    public Convocatoria(String id_convocatoria, String fecha_convocatoria, String descripcion) {
+    public Convocatoria(Integer id_convocatoria, String fecha_convocatoria, String descripcion) {
         this.id_convocatoria = id_convocatoria;
         this.fecha_convocatoria = fecha_convocatoria;
         this.descripcion = descripcion;
     }
 
-    public String getId_convocatoria() {
+    public Integer getId_convocatoria() {
         return id_convocatoria;
     }
 
-    public void setId_convocatoria(String id_convocatoria) {
+    public void setId_convocatoria(Integer id_convocatoria) {
         this.id_convocatoria = id_convocatoria;
     }
 

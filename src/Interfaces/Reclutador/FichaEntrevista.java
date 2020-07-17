@@ -6,6 +6,7 @@
 package Interfaces.Reclutador;
 
 import static Interfaces.Reclutador.ListaPostulantes.pSelec;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,8 +21,9 @@ public class FichaEntrevista extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         ListaPostulantes listaP = new ListaPostulantes();
-        jLabel1.setText(listaP.nombre);
-        
+
+        txtNombre.setText(pSelec.getNombre());
+
     }
 
     /**
@@ -48,7 +50,7 @@ public class FichaEntrevista extends javax.swing.JFrame {
         jCheckBox5 = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         btnEnviar = new javax.swing.JButton();
@@ -167,10 +169,10 @@ public class FichaEntrevista extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel1.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nombre Postulante");
+        txtNombre.setBackground(new java.awt.Color(102, 102, 102));
+        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombre.setText("Nombre Postulante");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -178,14 +180,14 @@ public class FichaEntrevista extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(246, 246, 246))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -250,18 +252,46 @@ public class FichaEntrevista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        // DNI DEL POSTULANTE SELECCIONADO ANTES
-        String dniPostulanteActual = pSelec.getDni();
-        int aprobado = -1;
-        String puesto = "";
-        if (jRadioButton1.isSelected()) {
-            aprobado = 1;
-        }else if (jRadioButton2.isSelected()) {
-            aprobado = 0;
-        }
-        puesto = (String) jComboBox1.getSelectedItem();
         
-        // HACER EL UPDATE AL POSTULANTE EN LA BASE DE DATOS (aprobado, puesto, habilidades)
+        if (jRadioButton1.isSelected() || jRadioButton2.isSelected()) {
+            int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea contratar al empleado?");
+            if(dialogResult == JOptionPane.YES_OPTION){
+            // DNI DEL POSTULANTE SELECCIONADO ANTES
+            String dniPostulanteActual = pSelec.getDni();
+            int aprobado = -1;
+            String puesto = (String) jComboBox1.getSelectedItem();
+            if (jRadioButton1.isSelected()) {
+                aprobado = 1;
+            } else if (jRadioButton2.isSelected()) {
+                aprobado = 0;
+            }
+            if (jCheckBox1.isSelected()) {
+                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'LIDERAZ'
+            }
+            if (jCheckBox2.isSelected()) {
+                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'CREATIV'
+            }
+            if (jCheckBox3.isSelected()) {
+                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'TRAB_EQ'
+            }
+            if (jCheckBox4.isSelected()) {
+                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'COMUNIC'
+            }
+            if (jCheckBox5.isSelected()) {
+                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'EMPATIC'
+            }
+            if (jCheckBox6.isSelected()) {
+                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'PROACT'
+            }
+            JOptionPane.showMessageDialog(null, "Guardado exitosamente");
+            ListaPostulantes listaP = new ListaPostulantes();
+            listaP.setVisible(true);
+            this.dispose();
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Seleccione 'Si' o 'No'");
+        }
+        // HACER EL UPDATE AL POSTULANTE EN LA BASE DE DATOS (aprobado, puesto)
         // falta capturar habilidades
     }//GEN-LAST:event_btnEnviarActionPerformed
 
@@ -274,12 +304,12 @@ public class FichaEntrevista extends javax.swing.JFrame {
         ListaPostulantes listaP = new ListaPostulantes();
         listaP.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         // TODO add your handling code here:
-      
+
         buttonGroup1.clearSelection();
         jComboBox1.setSelectedIndex(0);
         jCheckBox1.setSelected(false);
@@ -288,10 +318,8 @@ public class FichaEntrevista extends javax.swing.JFrame {
         jCheckBox4.setSelected(false);
         jCheckBox5.setSelected(false);
         jCheckBox6.setSelected(false);
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_btnBorrarActionPerformed
 
     /**
@@ -342,7 +370,6 @@ public class FichaEntrevista extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -350,5 +377,6 @@ public class FichaEntrevista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JLabel txtNombre;
     // End of variables declaration//GEN-END:variables
 }

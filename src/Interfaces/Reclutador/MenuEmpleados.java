@@ -21,7 +21,7 @@ public class MenuEmpleados extends javax.swing.JFrame {
     public MenuEmpleados() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+        emp1.clear();
         //postulantes de prueba
         Empleado e1 = new Empleado("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"Lima","Surco","paloma@hotmail.com","999999999","20/07/2001","0002383397","89326389","0003","Chimu");
         Empleado e2 = new Empleado("70948592","Daniela Acevedo","Av. Proceres",19,"Lima","Surco","daniela@hotmail.com","999999999","25/07/2001","00382386297","89638630","0004","Huancayo");
@@ -33,7 +33,7 @@ public class MenuEmpleados extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         for (int i = 0; i < emp1.size(); i++) {
             Empleado eActual = emp1.get(i);
-            modelo.addRow(new Object[] {eActual.getNombre_completo(),"Puesto q esta en el contrato",eActual.getNombre_tienda()});
+            modelo.addRow(new Object[] {eActual.getNombre_completo(),"--Puesto q esta en el contrato",eActual.getNombre_tienda()});
         }
     }
     public static ArrayList<Empleado> emp1=new ArrayList();
@@ -84,10 +84,7 @@ public class MenuEmpleados extends javax.swing.JFrame {
         jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Nombre", "Puesto", "Tienda"
