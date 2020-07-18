@@ -5,7 +5,9 @@
  */
 package Interfaces.Reclutador;
 
+import Clases.Cuenta;
 import Intrefaces.Postulante.MenuInicial;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +22,12 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        cuentas.clear();
+        Cuenta c1 = new Cuenta("70384963","piero","12345");
+        Cuenta c2 = new Cuenta("70384956","fernando","12345");
+        cuentas.add(c1);
+        cuentas.add(c2);
     }
 
     /**
@@ -201,7 +209,9 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public static ArrayList<Cuenta> cuentas = new ArrayList();
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         MenuInicial menuinicial = new MenuInicial();
@@ -219,14 +229,14 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String[] usuario = {"piero", "fernando"};
-        String[] contrasena = {"1234", "12345"};
         boolean mensaje = false;
-        for (int i = 0; i < usuario.length; i++) {
-            if (usuario[i].equals(jTextField1.getText()) && contrasena[i].equals(jPasswordField1.getText())) {
+        for (int i = 0; i < cuentas.size(); i++) {
+            String userActual = cuentas.get(i).getUser();
+            String passActual = cuentas.get(i).getPassword();
+            if (userActual.equals(jTextField1.getText()) && passActual.equals(jPasswordField1.getText())) {
                 mensaje = true;
             }
-
+            
         }
         if (mensaje == true) {
             MenuReclutador menuR = new MenuReclutador();
