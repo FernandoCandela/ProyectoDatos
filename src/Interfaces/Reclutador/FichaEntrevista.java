@@ -5,7 +5,9 @@
  */
 package Interfaces.Reclutador;
 
+import Clases.Puesto;
 import static Interfaces.Reclutador.ListaPostulantes.pSelec;
+import static Intrefaces.Postulante.MenuConvocatoria.puestos;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,7 +23,17 @@ public class FichaEntrevista extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         ListaPostulantes listaP = new ListaPostulantes();
-
+        puestos.clear();
+        Puesto p1 = new Puesto("01","Vendedor",900,"7-12am");
+        Puesto p2 = new Puesto("03","Vendedor part",100,"11-12am");
+        Puesto p3 = new Puesto("04","Admin",300,"8-12am");
+        puestos.add(p1);
+        puestos.add(p2);
+        puestos.add(p3);
+        
+        for (int i = 0; i < puestos.size(); i++) {
+            jComboBox1.addItem(puestos.get(i).getNombre());
+        }
         txtNombre.setText(pSelec.getNombre());
 
     }
@@ -72,7 +84,6 @@ public class FichaEntrevista extends javax.swing.JFrame {
         jRadioButton2.setText("No");
 
         jComboBox1.setBackground(new java.awt.Color(255, 204, 102));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 102)));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

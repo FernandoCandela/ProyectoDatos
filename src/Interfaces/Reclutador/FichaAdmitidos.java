@@ -352,7 +352,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea contratar al empleado?");
+        int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro?");
         if(dialogResult == JOptionPane.YES_OPTION){
             Empleado e1 = new Empleado();
         
