@@ -58,7 +58,7 @@ public class PostulantesDAO extends Conexion{
                        rs.getString(TPOSTULANTE_CORREO),
                        rs.getString(TPOSTULANTE_TELEFONO),
                        rs.getString(TPOSTULANTE_FECHA_NACIMIENTO),
-                       rs.getString(TPOSTULANTE_CONVOCATORIA),
+                       Integer.valueOf(rs.getString(TPOSTULANTE_CONVOCATORIA)),
                        rs.getString(TPOSTULANTE_ENTREVISTA));
                postulantes.add(postulante);
            }

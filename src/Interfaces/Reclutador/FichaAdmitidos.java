@@ -6,7 +6,9 @@
 package Interfaces.Reclutador;
 
 import Clases.Empleado;
+import Clases.Tienda;
 import static Interfaces.Reclutador.MenuAdmitidos.p1;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,9 +33,19 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         txtTelefono.setText(p1.getTelefono());
         txtDireccion.setText(p1.getDireccion());
         
+        tiendas.clear();
+        Tienda t1 = new Tienda("Chimu","Calle GAAAAAA");
+        Tienda t2 = new Tienda("Miraflores","Calle GAAAAAA");
+        Tienda t3 = new Tienda("Huancayo","Calle GAAAAAA");
+        tiendas.add(t1);
+        tiendas.add(t2);
+        tiendas.add(t3);
         
+        for (int i = 0; i < tiendas.size(); i++) {
+            jComboBox1.addItem(tiendas.get(i).getNombre());
+        }
     }
-
+    public static ArrayList<Tienda> tiendas = new ArrayList();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -157,7 +169,6 @@ public class FichaAdmitidos extends javax.swing.JFrame {
 
         jComboBox1.setBackground(new java.awt.Color(255, 204, 102));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);

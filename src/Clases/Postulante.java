@@ -40,7 +40,7 @@ public class Postulante {
     private String correo;
     private String telefono;
     private String fecha_nac;
-    private String id_convocatoria;
+    private Integer id_convocatoria;
     private String cod_entrevista;
 
     public Postulante() {
@@ -48,7 +48,7 @@ public class Postulante {
 
     public Postulante(String dni, String nombre, String direccion, Integer edad,String aprobado, 
             String ciudad, String distrito, String puesto_potencial, String medio_convocatoria, 
-            String correo, String telefono, String fecha_nac, String id_convocatoria, String cod_entrevista) {
+            String correo, String telefono, String fecha_nac, Integer id_convocatoria, String cod_entrevista) {
         this.dni = dni;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -161,11 +161,11 @@ public class Postulante {
         this.fecha_nac = fecha_nac;
     }
 
-    public String getId_convocatoria() {
+    public Integer getId_convocatoria() {
         return id_convocatoria;
     }
 
-    public void setId_convocatoria(String id_convocatoria) {
+    public void setId_convocatoria(Integer id_convocatoria) {
         this.id_convocatoria = id_convocatoria;
     }
 

@@ -5,6 +5,7 @@
  */
 package Interfaces.Reclutador;
 
+import Clases.Convocatoria;
 import Clases.Postulante;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
@@ -23,26 +24,39 @@ public class MenuAdmitidos extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         post1.clear();
         //postulantes de prueba
-        Postulante p1 = new Postulante("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"1","Lima","Surco","Vendedor Full-Time","Computrabajo","paloma@hotmail.com","999999999","20/07/2001","0003","0001");
-        Postulante p2 = new Postulante("70948592","Daniela Acevedo","Av. Proceres",19,"1","Lima","Surco","Vendedor Part-Time","Indeed","daniela@hotmail.com","999999999","25/07/2001","0004","0001");
+        Postulante p1 = new Postulante("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"1","Lima","Surco","Vendedor Full-Time","Computrabajo","paloma@hotmail.com","999999999","20/07/2001",0003,"0001");
+        Postulante p2 = new Postulante("70948592","Daniela Acevedo","Av. Proceres",19,"1","Lima","Surco","Vendedor Part-Time","Indeed","daniela@hotmail.com","999999999","25/07/2001",0004,"0001");
         post1.add(p1);
         post1.add(p2);
         
+        Convocatoria c1 = new Convocatoria(0004, "01/08/2020", "PRUEBAAAAA");
+        Convocatoria c2 = new Convocatoria(0003, "04/05/2020", "PRUEBAAAAA");
+        convocatorias.add(c1);
+        convocatorias.add(c2);
         //falta conectar el arraylist post1 a la base de datos
         //POSTULANTES TIENEN QUE TENER APROBADO EN 1 PARA SER ADMITIDOS
-        //Falta poner la fecha de la entrevista del postulante
+        //Falta poner la fecha de la conv del postulante
         
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         
         for (int i = 0; i < post1.size(); i++) {
             Postulante pActual = post1.get(i);
-            modelo.addRow(new Object[] {pActual.getNombre(),pActual.getPuesto_potencial(),"--Fecha q esta en entrevista"});
+            int posConv = 0;
+            for (int j = 0; j < convocatorias.size(); j++) {
+                if (pActual.getId_convocatoria() == convocatorias.get(j).getId_convocatoria()) {
+                    posConv = j;
+                }
+            }
+            Convocatoria cActual = convocatorias.get(posConv);
+            modelo.addRow(new Object[] {pActual.getNombre(),pActual.getPuesto_potencial(),cActual.getFecha_convocatoria()});
         }
         
         
     }
     public static ArrayList<Postulante> post1=new ArrayList();
     public static Postulante p1 = new Postulante();
+    public static ArrayList<Convocatoria> convocatorias = new ArrayList<>();
+    public static Convocatoria c1 = new Convocatoria();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,7 +121,7 @@ public class MenuAdmitidos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Puesto", "Fecha"
+                "Nombre", "Puesto", "Fecha Convocatoria"
             }
         ) {
             Class[] types = new Class [] {

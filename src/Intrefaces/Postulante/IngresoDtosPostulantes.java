@@ -6,10 +6,13 @@
 package Intrefaces.Postulante;
 
 import Clases.Postulante;
+import static Intrefaces.Postulante.MenuConvocatoria.puesto;
+import static Intrefaces.Postulante.MenuInicial.titulo;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,11 +26,11 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
     public IngresoDtosPostulantes() {
         initComponents();
         this.setLocationRelativeTo(null);
-        /*  MenuInicial menu = new  MenuInicial();
-          MenuConvocatoria menuC = new MenuConvocatoria();
+        MenuInicial menu = new  MenuInicial();
+        MenuConvocatoria menuC = new MenuConvocatoria();
         
-        jLabel1.setText(menu.titulo);
-        jLabel12.setText(menuC.puesto);*/
+        jLabel1.setText("Convocatoria "+menu.titulo);
+        jLabel12.setText("Puesto: "+menuC.puesto);
        
     }
     /**
@@ -380,6 +383,11 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
+        try {
+        if (!"".equals(jNombreApellidos.getText()) && !"".equals(jDni.getText()) && !"".equals(jCorreo.getText())
+                && !"".equals(jTelefono.getText()) && !"".equals(jCiudad.getText()) &&  !"".equals(jDistrito.getText())
+                && !"".equals(jDireccion.getText()) && !"".equals((String)jMedioCon.getSelectedItem())) {
+            
         
         Postulante postulante = new Postulante();
         postulante.setNombre(jNombreApellidos.getText());
@@ -389,10 +397,10 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         postulante.setCiudad(jCiudad.getText());
         postulante.setDistrito(jDistrito.getText());
         postulante.setDireccion(jDireccion.getText());
-        postulante.setId_convocatoria(jLabel1.getText());
+        postulante.setId_convocatoria(Integer.parseInt(titulo));
         postulante.setMedio_convocatoria((String)jMedioCon.getSelectedItem());
         postulante.setAprobado("0");
-        postulante.setPuesto_potencial(jLabel12.getText());
+        postulante.setPuesto_potencial(puesto);
         
         // Jala la fecha del objeto y la convierte a string
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -410,6 +418,17 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         postulante.setEdad(edad);
         
         // FALTA ASIGNAR CODIGO DE ENTREVISTA (LO ASIGNA AUTOMATICAMENTE LA BD???)
+        JOptionPane.showMessageDialog(null, "Postulación realizada con éxito!");
+        MenuConvocatoria menuC = new MenuConvocatoria();
+        menuC.setVisible(true);
+        this.dispose();
+        
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe rellenar todos los campos.");
+        }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Datos inválidos. Verifique los datos.");
+        }
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     /**
