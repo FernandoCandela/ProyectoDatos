@@ -5,11 +5,14 @@
  */
 package Clases;
 
+import Back.CuentaDAO;
+import java.util.ArrayList;
+
 /**
  *
  * @author Renatto
  */
-public class Cuenta {
+public class Cuenta extends CuentaDAO{
     private String DNI;
     private String user;
     private String password;
@@ -47,5 +50,9 @@ public class Cuenta {
         this.password = password;
     }
     
-    
+    public static ArrayList<Cuenta> make_Lista_Cuenta(){
+        Cuenta cuenta= new Cuenta();
+        return cuenta.read();
+        
+    }
 }

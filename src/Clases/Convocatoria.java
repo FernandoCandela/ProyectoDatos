@@ -49,7 +49,7 @@ public class Convocatoria extends ConvocatoriaDAO {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-  
+    
     public static ArrayList<Convocatoria> makeConvocatoriaList(){
         Convocatoria convocatoria = new Convocatoria();
         

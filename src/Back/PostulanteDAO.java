@@ -33,13 +33,13 @@ import java.util.ArrayList;
  *
  * @author Renatto
  */
-public class PostulantesDAO extends Conexion{
+public class PostulanteDAO extends Conexion{
     
     public ArrayList <Postulante> readByConvocatoria(String id_convocatoria){
         ArrayList<Postulante> postulantes = new ArrayList();
        try(Connection connection = get_connection()){
            
-           String query = "SELECT * FROM " + TPOSTULANTE + " WHERE " + TCONVOCATORIA_ID +" = " + id_convocatoria;
+           String query = "SELECT * FROM " + TPOSTULANTE + " WHERE " + TPOSTULANTE_CONVOCATORIA +" = " + id_convocatoria;
            PreparedStatement preparedStatement = connection. prepareStatement(query);
            ResultSet rs = preparedStatement.executeQuery();
            
@@ -67,7 +67,55 @@ public class PostulantesDAO extends Conexion{
        }
        return postulantes;
     }
+    public ArrayList <Postulante> readIfApproved(){
+        ArrayList<Postulante> postulantes = new ArrayList();
+       try(Connection connection = get_connection()){
+           
+           String query = "SELECT * FROM " + TPOSTULANTE + " WHERE " + TPOSTULANTE_APROBADO +" = 'SI'" ;
+           PreparedStatement preparedStatement = connection. prepareStatement(query);
+           ResultSet rs = preparedStatement.executeQuery();
+           
+           while(rs.next()){
+               Postulante postulante;
+               postulante = new Postulante(
+                       rs.getString(TPOSTULANTE_DNI),
+                       rs.getString(TPOSTULANTE_NOMBRE),
+                       rs.getString(TPOSTULANTE_DIRECCION),
+                       Integer.valueOf(rs.getString(TPOSTULANTE_EDAD)),
+                       rs.getString(TPOSTULANTE_APROBADO),
+                       rs.getString(TPOSTULANTE_CIUDAD),
+                       rs.getString(TPOSTULANTE_DISTRITO),
+                       rs.getString(TPOSTULANTE_PUESTO),
+                       rs.getString(TPOSTULANTE_MEDIO),
+                       rs.getString(TPOSTULANTE_CORREO),
+                       rs.getString(TPOSTULANTE_TELEFONO),
+                       rs.getString(TPOSTULANTE_FECHA_NACIMIENTO),
+                       Integer.valueOf(rs.getString(TPOSTULANTE_CONVOCATORIA)),
+                       rs.getString(TPOSTULANTE_ENTREVISTA));
+               postulantes.add(postulante);
+           }
+       }catch(SQLException e){
+           e.printStackTrace();
+       }
+       return postulantes;
+    }
+     
     
+    public void insertarPostulante(Postulante postulante ){
+        try(Connection connection = get_connection()){
+           
+           String query = "INSERT INTO" + TPOSTULANTE + " VALUES ('" + postulante.getDni() +"','" +postulante.getNombre()+"','" + 
+                         postulante.getDireccion()+"',"+postulante.getEdad()+",'"+postulante.getAprobado() +"','" +postulante.getCiudad()
+                         + "','"+postulante.getDistrito()+"','"+postulante.getPuesto_potencial()+"','"+postulante.getMedio_convocatoria()
+                         + "','"+postulante.getCorreo()+"','"+postulante.getTelefono()+"','"+postulante.getFecha_nac()+"',"+postulante.getId_convocatoria()
+                         +","+postulante.getCod_entrevista()+")";
+           PreparedStatement preparedStatement = connection. prepareStatement(query);
+           preparedStatement.executeQuery();
+               
+       }catch(SQLException e){
+           e.printStackTrace();
+       }
+    }
     public void aprobarPostulante(String dni_postulante){
         
         try(Connection connection = get_connection()){
@@ -92,5 +140,15 @@ public class PostulantesDAO extends Conexion{
            e.printStackTrace();
        }
     }
-    
+    public void removePostulante(String dni_postulante){
+        try(Connection connection = get_connection()){
+           
+           String query = "DELETE FROM " + TPOSTULANTE + " WHERE " + TPOSTULANTE_DNI +" = '" + dni_postulante + "'";
+           PreparedStatement preparedStatement = connection. prepareStatement(query);
+           preparedStatement.executeQuery();
+               
+       }catch(SQLException e){
+           e.printStackTrace();
+       }
+    }
 }

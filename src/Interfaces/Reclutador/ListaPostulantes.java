@@ -25,6 +25,10 @@ public class ListaPostulantes extends javax.swing.JFrame {
         //MenuConvocatoriaR menuCR = new MenuConvocatoriaR();
         //jLabel1.setText(menuCR.titulo);
         post1.clear();
+        
+        //funcion para traer postulantes por convocatoria
+        //Postulante.leer_postulantes_por_convocatoria(id_convocatoria); - pasar como parametro el id de convocatoria en String
+        
         //postulantes de prueba
         Postulante p1 = new Postulante("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"0","Lima","Surco","Vendedor Full-Time","Computrabajo","paloma@hotmail.com","999999999","20/07/2001",0003,"0001");
         Postulante p2 = new Postulante("70948592","Daniela Acevedo","Av. Proceres",19,"0","Lima","Surco","Vendedor Part-Time","Indeed","daniela@hotmail.com","999999999","25/07/2001",0004,"0001");

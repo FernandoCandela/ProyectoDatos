@@ -22,6 +22,7 @@ import java.util.ArrayList;
  * @author Renatto
  */
 public class PuestoDAO extends Conexion{
+    
      public ArrayList<Puesto> read(){
        ArrayList<Puesto> puestos = new ArrayList();
        try(Connection connection = get_connection()){

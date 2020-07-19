@@ -23,6 +23,9 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
+        //funcion para leer todas las cuentas;
+        //Cuenta.make_Lista_Cuenta();
+        
         cuentas.clear();
         Cuenta c1 = new Cuenta("70384963","piero","12345");
         Cuenta c2 = new Cuenta("70384956","fernando","12345");

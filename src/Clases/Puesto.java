@@ -5,11 +5,14 @@
  */
 package Clases;
 
+import Back.PuestoDAO;
+import java.util.ArrayList;
+
 /**
  *
  * @author Piero
  */
-public class Puesto {
+public class Puesto extends PuestoDAO{
     private String codigo;
     private String nombre;
     private int salario;
@@ -57,6 +60,10 @@ public class Puesto {
         this.horario = horario;
     }
 
+    public static ArrayList<Puesto> makePuestoList(){
+        Puesto foobar= new Puesto();
+        return foobar.read();
+    }
     
     
     
