@@ -45,7 +45,7 @@ public class MenuEmpleados extends javax.swing.JFrame {
             
             int posCont = 0;
             for (int j = 0; j < contratos.size(); j++) {
-                if (eActual.getDni() == contratos.get(j).getCodigo()) {
+                if (eActual.getDni().equals (contratos.get(j).getCodigo())) {
                     posCont = j;
                 }
             }

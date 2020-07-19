@@ -53,7 +53,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         tiendas.clear();
         //funcion para leer las tiendas
         tiendas=Tienda.makeTiendaList();
-        
+        puestos= Puesto.makePuestoList();
         for (int i = 0; i < tiendas.size(); i++) {
             jComboBox1.addItem(tiendas.get(i).getNombre());
         }
@@ -385,15 +385,19 @@ public class FichaAdmitidos extends javax.swing.JFrame {
             e1.setNombre_completo(txtNombre.getText());
             e1.setNombre_tienda((String)jComboBox1.getSelectedItem());
             e1.setTelefono(txtTelefono.getText());
-
+            
             //////////////ELIMINAR POSTULANTE DE LA BASE DE DATOS!!!!!!!!!!/////////////////////
             //funcion para borrar postulante
             
             
             int posPues = 0;
             for (int j = 0; j < puestos.size(); j++) {
-                if (p1.getPuesto_potencial() == puestos.get(j).getNombre()) {
+                System.out.println(j+": "+p1.getPuesto_potencial());
+                System.out.println(j+": "+puestos.get(j).getNombre());
+                if (p1.getPuesto_potencial().equals( puestos.get(j).getNombre())) {
                     posPues = j;
+                    System.out.println("Se Guarda");
+                    
                 }
             }
             
@@ -406,15 +410,13 @@ public class FichaAdmitidos extends javax.swing.JFrame {
             
             
             LocalDate ahora = LocalDate.now();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
-                        
             DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            LocalDate fechaActual = LocalDate.parse(ahora.toString(), fmt);
-            LocalDate newDate = ahora.plusMonths(6);
-             DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            LocalDate fechaFin = LocalDate.parse(newDate.toString(), fmt2);
+            String fechaActual = ahora.format(fmt);
+        
+            LocalDate nueva = ahora.plusMonths(6);
+            String fechaFin = nueva.format(fmt);
             
-            Contrato c1 = new Contrato(e1.getDni(),fechaActual.toString(),fechaFin.toString(),"Practicante",puestos.get(posPues).getHorario(),puestos.get(posPues).getSalario(),
+            Contrato c1 = new Contrato(e1.getDni(),fechaActual,fechaFin,"Practica",puestos.get(posPues).getHorario(),puestos.get(posPues).getSalario(),
                                         puestos.get(posPues).getNombre(),e1.getDni());                 
             Contrato.insertarContrato(c1);
 
