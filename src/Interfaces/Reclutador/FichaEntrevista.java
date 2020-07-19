@@ -26,19 +26,14 @@ public class FichaEntrevista extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         ListaPostulantes listaP = new ListaPostulantes();
         puestos.clear();
-       
-        
-       
-        
+
         //funcion para leer los puestos
-        puestos=Puesto.makePuestoList();
-        
+        puestos = Puesto.makePuestoList();
+
         //funcion para actualizar el peusto
         //Postulante.actualizar_puesto(dni_postulante, puesto); pasar como parametro el dni en String y el Puesto en String
-        
         //funcion para Insertar una Habilidad al Postulante
         //Postulante_habilidad.inesrtar(postulante_habilidad); pasar como parametro un Objeto de Postulante_Habilidad
-        
         for (int i = 0; i < puestos.size(); i++) {
             jComboBox1.addItem(puestos.get(i).getNombre());
         }
@@ -86,10 +81,20 @@ public class FichaEntrevista extends javax.swing.JFrame {
         jRadioButton1.setBackground(new java.awt.Color(255, 204, 102));
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Sí");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         jRadioButton2.setBackground(new java.awt.Color(255, 204, 102));
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("No");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         jComboBox1.setBackground(new java.awt.Color(255, 204, 102));
         jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 102)));
@@ -189,7 +194,7 @@ public class FichaEntrevista extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
         txtNombre.setBackground(new java.awt.Color(102, 102, 102));
-        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(255, 255, 255));
         txtNombre.setText("Nombre Postulante");
 
@@ -197,10 +202,10 @@ public class FichaEntrevista extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(246, 246, 246))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(226, 226, 226)
+                .addComponent(txtNombre)
+                .addContainerGap(243, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,19 +243,20 @@ public class FichaEntrevista extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(btnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(177, 177, 177))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,61 +277,58 @@ public class FichaEntrevista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        
+
         if (jRadioButton1.isSelected() || jRadioButton2.isSelected()) {
             int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea contratar al empleado?");
-            if(dialogResult == JOptionPane.YES_OPTION){
-            // DNI DEL POSTULANTE SELECCIONADO ANTES
-            String dniPostulanteActual = pSelec.getDni();
-      
-            String puesto = (String) jComboBox1.getSelectedItem();
-            if (jRadioButton1.isSelected()) {
-                Postulante.aprobar_postulante( dniPostulanteActual);
-            } else if (jRadioButton2.isSelected()) {
-                
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                // DNI DEL POSTULANTE SELECCIONADO ANTES
+                String dniPostulanteActual = pSelec.getDni();
+
+                String puesto = (String) jComboBox1.getSelectedItem();
+                if (jRadioButton1.isSelected()) {
+                    Postulante.aprobar_postulante(dniPostulanteActual);
+                } else if (jRadioButton2.isSelected()) {
+
+                }
+                if (jCheckBox1.isSelected()) {
+                    //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'LIDERAZ'
+                    Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual, "LIDERAZ");
+                    Postulante_habilidad.inesrtar(a1);
+                }
+                if (jCheckBox2.isSelected()) {
+                    //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'CREATIV'
+                    Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual, "CREATIV");
+                    Postulante_habilidad.inesrtar(a1);
+                }
+                if (jCheckBox3.isSelected()) {
+                    //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'TRAB_EQ'
+                    Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual, "TRAB_EQ");
+                    Postulante_habilidad.inesrtar(a1);
+                }
+                if (jCheckBox4.isSelected()) {
+                    //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'COMUNIC'
+                    Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual, "COMUNIC");
+                    Postulante_habilidad.inesrtar(a1);
+                }
+                if (jCheckBox5.isSelected()) {
+                    //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'EMPATIC'
+                    Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual, "EMPATIC");
+                    Postulante_habilidad.inesrtar(a1);
+                }
+                if (jCheckBox6.isSelected()) {
+                    //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'PROACT'
+                    Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual, "PROACT");
+                    Postulante_habilidad.inesrtar(a1);
+                }
+                //funcion para aprobar a postulante
+                Postulante.actualizar_puesto(dniPostulanteActual, puesto);
+
+                JOptionPane.showMessageDialog(null, "Guardado exitosamente");
+                ListaPostulantes listaP = new ListaPostulantes();
+                listaP.setVisible(true);
+                this.dispose();
             }
-            if (jCheckBox1.isSelected()) {
-                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'LIDERAZ'
-                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"LIDERAZ");
-                Postulante_habilidad.inesrtar(a1);
-            }
-            if (jCheckBox2.isSelected()) {
-                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'CREATIV'
-                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"CREATIV");
-                Postulante_habilidad.inesrtar(a1);
-            }
-            if (jCheckBox3.isSelected()) {
-                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'TRAB_EQ'
-                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"TRAB_EQ");
-                Postulante_habilidad.inesrtar(a1);
-            }
-            if (jCheckBox4.isSelected()) {
-                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'COMUNIC'
-                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"COMUNIC");
-                Postulante_habilidad.inesrtar(a1);
-            }
-            if (jCheckBox5.isSelected()) {
-                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'EMPATIC'
-                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"EMPATIC");
-                Postulante_habilidad.inesrtar(a1);
-            }
-            if (jCheckBox6.isSelected()) {
-                //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'PROACT'
-                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"PROACT");
-                Postulante_habilidad.inesrtar(a1);
-            }
-             //funcion para aprobar a postulante
-            Postulante.actualizar_puesto(dniPostulanteActual, puesto);
-            
-            
-            
-        
-            JOptionPane.showMessageDialog(null, "Guardado exitosamente");
-            ListaPostulantes listaP = new ListaPostulantes();
-            listaP.setVisible(true);
-            this.dispose();
-            }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Seleccione 'Si' o 'No'");
         }
         // HACER EL UPDATE AL POSTULANTE EN LA BASE DE DATOS (aprobado, puesto)
@@ -358,6 +361,31 @@ public class FichaEntrevista extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        jComboBox1.setEnabled(false);
+        jCheckBox1.setEnabled(false);
+        jCheckBox2.setEnabled(false);
+        jCheckBox3.setEnabled(false);
+        jCheckBox4.setEnabled(false);
+        jCheckBox5.setEnabled(false);
+        jCheckBox6.setEnabled(false);
+
+
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        jComboBox1.setEnabled(true);
+        jCheckBox1.setEnabled(true);
+        jCheckBox2.setEnabled(true);
+        jCheckBox3.setEnabled(true);
+        jCheckBox4.setEnabled(true);
+        jCheckBox5.setEnabled(true);
+        jCheckBox6.setEnabled(true);
+
+
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**
      * @param args the command line arguments
