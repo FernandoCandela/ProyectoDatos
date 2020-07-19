@@ -6,6 +6,7 @@
 package Clases;
 
 import Back.ContratoDAO;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,14 +18,14 @@ public class Contrato extends ContratoDAO{
     private String fecha_fin;
     private String tipo;
     private String horario;
-    private String salario;
+    private Integer salario;
     private String puesto;
     private String DNI;
 
     public Contrato() {
     }
 
-    public Contrato(String codigo, String fecha_inicio, String fecha_fin, String tipo, String horario, String salario, String puesto, String DNI) {
+    public Contrato(String codigo, String fecha_inicio, String fecha_fin, String tipo, String horario, Integer salario, String puesto, String DNI) {
         this.codigo = codigo;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
@@ -75,11 +76,11 @@ public class Contrato extends ContratoDAO{
         this.horario = horario;
     }
 
-    public String getSalario() {
+    public Integer getSalario() {
         return salario;
     }
 
-    public void setSalario(String salario) {
+    public void setSalario(Integer salario) {
         this.salario = salario;
     }
 
@@ -99,6 +100,11 @@ public class Contrato extends ContratoDAO{
         this.DNI = DNI;
     }
     
+    public static ArrayList <Contrato> makeList(){
+        Contrato foobar = new Contrato();
+        return foobar.read();
+        
+    }
     public static void insertarContrato(Contrato contrato){
         Contrato foobar = new Contrato();
         foobar.insert(contrato);

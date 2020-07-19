@@ -24,6 +24,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -54,7 +55,7 @@ public class EmpleadoDAO extends Conexion{
                        rs.getString(TEMPLEADO_FECHA_NACIMIENTO),
                        rs.getString(TEMPLEADO_CUENTA_BANCO),
                        rs.getString(TEMPLEADO_AFP),
-                       rs.getString(TEMPLEADO_ENTREVISTA),
+                       Integer.valueOf(rs.getString(TEMPLEADO_ENTREVISTA)),
                        rs.getString(TEMPLEADO_TIENDA));
                empleados.add(empleado);
            }
@@ -64,6 +65,47 @@ public class EmpleadoDAO extends Conexion{
        return empleados;
     }
     
+     /*public static final String TEMPLEADO="EMPLEADO";
+    public static final String TEMPLEADO_DNI="DNI";
+    public static final String TEMPLEADO_NOMBRE="NOMBRE_COMPLETO";
+    public static final String TEMPLEADO_DIRECCION="DIRECCION";
+    public static final String TEMPLEADO_EDAD="EDAD";
+    public static final String TEMPLEADO_CIUDAD="CIUDAD";
+    public static final String TEMPLEADO_DISTRITO="DISTRITO";
+    public static final String TEMPLEADO_CORREO="CORREO";
+    public static final String TEMPLEADO_TELEFONO="TELEFONO";
+    public static final String TEMPLEADO_FECHA_NACIMIENTO="FECHA_NACIMIENTO";
+    public static final String TEMPLEADO_CUENTA_BANCO="CUENTA_BANCO";
+    public static final String TEMPLEADO_AFP="AFP";
+    public static final String TEMPLEADO_ENTREVISTA="CODIGO_ENTREVISTA";
+    public static final String TEMPLEADO_TIENDA="NOMBRE_TIENDA";*/
+    
+    public void insert(Empleado empleado){
+        try(Connection connection = get_connection()){
+            Statement statement = connection.createStatement();
+            String query="INSERT INTO "+ TEMPLEADO + " (" 
+                    +TEMPLEADO_DNI + ", "+ TEMPLEADO_NOMBRE + ", "
+                    + TEMPLEADO_DIRECCION + ", "+ TEMPLEADO_EDAD + ", "
+                    + TEMPLEADO_CIUDAD + ", "+ TEMPLEADO_DISTRITO + ", "
+                    + TEMPLEADO_CORREO + ", "+ TEMPLEADO_TELEFONO + ", "
+                    + TEMPLEADO_FECHA_NACIMIENTO + ", "+ TEMPLEADO_CUENTA_BANCO + ", "
+                    + TEMPLEADO_AFP + ", "+ TEMPLEADO_ENTREVISTA + ", "+ TEMPLEADO_TIENDA 
+                    + ")" + " VALUES('"
+                    + empleado.getDni()+ "', '"+empleado.getNombre_completo()+"','"+
+                    empleado.getDireccion()+"',"+empleado.getEdad()+",'"+empleado.getCiudad()+
+                    "','"+empleado.getDistrito()+"','"+empleado.getCorreo()+"','"+empleado.getTelefono()
+                    +"','"+empleado.getFecha_nacimiento()+"','"+empleado.getCuenta_banco()+"','"+empleado.getAfp()
+                    +"',"+empleado.getCodigo_entrevista()+",'"+empleado.getNombre_tienda()+"')";
+                    
+            
+            if(statement.executeUpdate(query)>0){
+                System.out.println("Se inserto Convocatoria");
+            }
+                    
+         }catch(SQLException e){
+             e.printStackTrace();
+         }
+    }
     
 }
 

@@ -35,7 +35,7 @@ import java.util.ArrayList;
  */
 public class PostulanteDAO extends Conexion{
     
-    public ArrayList <Postulante> readByConvocatoria(String id_convocatoria){
+    public ArrayList <Postulante> readByConvocatoria(Integer id_convocatoria){
         ArrayList<Postulante> postulantes = new ArrayList();
        try(Connection connection = get_connection()){
            
@@ -59,7 +59,7 @@ public class PostulanteDAO extends Conexion{
                        rs.getString(TPOSTULANTE_TELEFONO),
                        rs.getString(TPOSTULANTE_FECHA_NACIMIENTO),
                        Integer.valueOf(rs.getString(TPOSTULANTE_CONVOCATORIA)),
-                       rs.getString(TPOSTULANTE_ENTREVISTA));
+                       Integer.valueOf(rs.getString(TPOSTULANTE_ENTREVISTA)));
                postulantes.add(postulante);
            }
        }catch(SQLException e){
@@ -91,7 +91,7 @@ public class PostulanteDAO extends Conexion{
                        rs.getString(TPOSTULANTE_TELEFONO),
                        rs.getString(TPOSTULANTE_FECHA_NACIMIENTO),
                        Integer.valueOf(rs.getString(TPOSTULANTE_CONVOCATORIA)),
-                       rs.getString(TPOSTULANTE_ENTREVISTA));
+                       Integer.valueOf(rs.getString(TPOSTULANTE_ENTREVISTA)));
                postulantes.add(postulante);
            }
        }catch(SQLException e){
@@ -104,7 +104,7 @@ public class PostulanteDAO extends Conexion{
     public void insertarPostulante(Postulante postulante ){
         try(Connection connection = get_connection()){
            
-           String query = "INSERT INTO" + TPOSTULANTE + " VALUES ('" + postulante.getDni() +"','" +postulante.getNombre()+"','" + 
+           String query = "INSERT INTO " + TPOSTULANTE + " VALUES ('" + postulante.getDni() +"','" +postulante.getNombre()+"','" + 
                          postulante.getDireccion()+"',"+postulante.getEdad()+",'"+postulante.getAprobado() +"','" +postulante.getCiudad()
                          + "','"+postulante.getDistrito()+"','"+postulante.getPuesto_potencial()+"','"+postulante.getMedio_convocatoria()
                          + "','"+postulante.getCorreo()+"','"+postulante.getTelefono()+"','"+postulante.getFecha_nac()+"',"+postulante.getId_convocatoria()

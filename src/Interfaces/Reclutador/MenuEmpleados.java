@@ -5,6 +5,7 @@
  */
 package Interfaces.Reclutador;
 
+import Clases.Contrato;
 import Clases.Empleado;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
@@ -23,20 +24,38 @@ public class MenuEmpleados extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         emp1.clear();
         //postulantes de prueba
-        Empleado e1 = new Empleado("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"Lima","Surco","paloma@hotmail.com","999999999","20/07/2001","0002383397","89326389","0003","Chimu");
-        Empleado e2 = new Empleado("70948592","Daniela Acevedo","Av. Proceres",19,"Lima","Surco","daniela@hotmail.com","999999999","25/07/2001","00382386297","89638630","0004","Huancayo");
-        emp1.add(e1);
-        emp1.add(e2);
+        //Empleado e1 = new Empleado("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"Lima","Surco","paloma@hotmail.com","999999999","20/07/2001","0002383397","89326389","0003","Chimu");
+        //Empleado e2 = new Empleado("70948592","Daniela Acevedo","Av. Proceres",19,"Lima","Surco","daniela@hotmail.com","999999999","25/07/2001","00382386297","89638630","0004","Huancayo");
+        //emp1.add(e1);
+        //emp1.add(e2);
         
         //falta conectar el arraylist post1 a la base de datos
+        emp1=Empleado.leer();
+        
+        contratos.clear();
+        contratos=Contrato.makeList();
         //falta poner el puesto del empleado que esta en el contrato
+        
+        
+            
+            
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         for (int i = 0; i < emp1.size(); i++) {
             Empleado eActual = emp1.get(i);
-            modelo.addRow(new Object[] {eActual.getNombre_completo(),"--Puesto q esta en el contrato",eActual.getNombre_tienda()});
+            
+            int posCont = 0;
+            for (int j = 0; j < contratos.size(); j++) {
+                if (eActual.getDni() == contratos.get(j).getCodigo()) {
+                    posCont = j;
+                }
+            }
+            Contrato c1 = contratos.get(posCont);
+            modelo.addRow(new Object[] {eActual.getNombre_completo(),c1.getPuesto(),eActual.getNombre_tienda()});
         }
     }
     public static ArrayList<Empleado> emp1=new ArrayList();
+    public static ArrayList<Contrato> contratos=new ArrayList();
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

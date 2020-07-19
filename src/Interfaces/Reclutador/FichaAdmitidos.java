@@ -5,10 +5,16 @@
  */
 package Interfaces.Reclutador;
 
+import Clases.Contrato;
 import Clases.Empleado;
 import Clases.Postulante;
+import Clases.Postulante_habilidad;
+import Clases.Puesto;
 import Clases.Tienda;
 import static Interfaces.Reclutador.MenuAdmitidos.p1;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -25,14 +31,15 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
-        //funcion para leer las tiendas
-        //Tienda.makeTiendaList();
+        
         
         //funcion para crear empleado 
-        //
+        //Empleado.insertarEmpleado(empleado);pasar Objeto Empleado
         
         //funcion para borrar postulante
         //Postulante.removerPostulante(dni_postulante);//pasar como parametro el dni del postulatne a eliminar como String
+        
+        
         
         txtNombre.setText(p1.getNombre());
         txtPuesto.setText(p1.getPuesto_potencial());
@@ -44,12 +51,8 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         txtDireccion.setText(p1.getDireccion());
         
         tiendas.clear();
-        Tienda t1 = new Tienda("Chimu","Calle GAAAAAA");
-        Tienda t2 = new Tienda("Miraflores","Calle GAAAAAA");
-        Tienda t3 = new Tienda("Huancayo","Calle GAAAAAA");
-        tiendas.add(t1);
-        tiendas.add(t2);
-        tiendas.add(t3);
+        //funcion para leer las tiendas
+        tiendas=Tienda.makeTiendaList();
         
         for (int i = 0; i < tiendas.size(); i++) {
             jComboBox1.addItem(tiendas.get(i).getNombre());
@@ -58,6 +61,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         
     }
     public static ArrayList<Tienda> tiendas = new ArrayList();
+    public static ArrayList <Puesto> puestos= new ArrayList();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -370,7 +374,7 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         
             e1.setAfp(txtAFP.getText());
             e1.setCiudad(txtCiudad.getText());
-            e1.setCodigo_entrevista("");
+            e1.setCodigo_entrevista(1);
             e1.setCorreo(txtCorreo.getText());
             e1.setCuenta_banco(txtCuentaBanco.getText());
             e1.setDireccion(txtDireccion.getText());
@@ -383,7 +387,36 @@ public class FichaAdmitidos extends javax.swing.JFrame {
             e1.setTelefono(txtTelefono.getText());
 
             //////////////ELIMINAR POSTULANTE DE LA BASE DE DATOS!!!!!!!!!!/////////////////////
+            //funcion para borrar postulante
+            
+            
+            int posPues = 0;
+            for (int j = 0; j < puestos.size(); j++) {
+                if (p1.getPuesto_potencial() == puestos.get(j).getNombre()) {
+                    posPues = j;
+                }
+            }
+            
+            Postulante_habilidad.remover(p1.getDni());
+            Postulante.removerPostulante(p1.getDni());
+            
             /////////////AGREGAR NUEVO EMPLEADO A LA BASE DE DATOS////////////////
+            Empleado.insertarEmpleado(e1);
+            
+            
+            
+            LocalDate ahora = LocalDate.now();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+                        
+            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate fechaActual = LocalDate.parse(ahora.toString(), fmt);
+            LocalDate newDate = ahora.plusMonths(6);
+             DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate fechaFin = LocalDate.parse(newDate.toString(), fmt2);
+            
+            Contrato c1 = new Contrato(e1.getDni(),fechaActual.toString(),fechaFin.toString(),"Practicante",puestos.get(posPues).getHorario(),puestos.get(posPues).getSalario(),
+                                        puestos.get(posPues).getNombre(),e1.getDni());                 
+            Contrato.insertarContrato(c1);
 
 
             JOptionPane.showMessageDialog(null, "Empleado contratado con éxito!");

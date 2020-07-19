@@ -10,6 +10,7 @@ import static DB.DataBase.TPOSTULANTE_HABILIDAD;
 import static DB.DataBase.TPOSTULANTE_HABILIDAD_DNI;
 import static DB.DataBase.TPOSTULANTE_HABILIDAD_HABILIDAD;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -49,5 +50,16 @@ public class Postulante_habilidadDAO extends Conexion{
          }catch(SQLException e){
              e.printStackTrace();
          }
+    }
+    public void remove(String  dni_postulante){
+        try(Connection connection = get_connection()){
+           
+           String query = "DELETE FROM " + TPOSTULANTE_HABILIDAD + " WHERE " + TPOSTULANTE_HABILIDAD_DNI +" = '" + dni_postulante + "'";
+           PreparedStatement preparedStatement = connection. prepareStatement(query);
+           preparedStatement.executeQuery();
+               
+       }catch(SQLException e){
+           e.printStackTrace();
+       }
     }
 }

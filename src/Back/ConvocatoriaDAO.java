@@ -64,4 +64,15 @@ public class ConvocatoriaDAO extends Conexion{
              e.printStackTrace();
          }
      }
+     public void updateDescription(Integer id_convocatoria,String description){
+         try(Connection connection = get_connection()){
+           
+           String query = "UPDATE " + TCONVOCATORIA + " SET " + TCONVOCATORIA_DESCRIPCION +" = '" + description + "' WHERE " + TCONVOCATORIA_ID + " = '" + id_convocatoria + "'";
+           PreparedStatement preparedStatement = connection. prepareStatement(query);
+           preparedStatement.executeQuery();
+               
+       }catch(SQLException e){
+           e.printStackTrace();
+       }
+     }
 }

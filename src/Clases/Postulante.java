@@ -44,14 +44,14 @@ public class Postulante extends PostulanteDAO{
     private String telefono;
     private String fecha_nac;
     private Integer id_convocatoria;
-    private String cod_entrevista;
+    private Integer cod_entrevista;
 
     public Postulante() {
     }
 
     public Postulante(String dni, String nombre, String direccion, Integer edad,String aprobado, 
             String ciudad, String distrito, String puesto_potencial, String medio_convocatoria, 
-            String correo, String telefono, String fecha_nac, Integer id_convocatoria, String cod_entrevista) {
+            String correo, String telefono, String fecha_nac, Integer id_convocatoria, Integer cod_entrevista) {
         this.dni = dni;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -172,11 +172,11 @@ public class Postulante extends PostulanteDAO{
         this.id_convocatoria = id_convocatoria;
     }
 
-    public String getCod_entrevista() {
+    public Integer getCod_entrevista() {
         return cod_entrevista;
     }
 
-    public void setCod_entrevista(String cod_entrevista) {
+    public void setCod_entrevista(Integer cod_entrevista) {
         this.cod_entrevista = cod_entrevista;
     }
 
@@ -190,7 +190,7 @@ public class Postulante extends PostulanteDAO{
         foobar.insertarPostulante(postulante);
     }
     
-    public static ArrayList<Postulante> leer_postulantes_por_convocatoria(String id_convocatoria){
+    public static ArrayList<Postulante> leer_postulantes_por_convocatoria(Integer id_convocatoria){
         Postulante foobar=new Postulante();
         return foobar.readByConvocatoria(id_convocatoria);
     }

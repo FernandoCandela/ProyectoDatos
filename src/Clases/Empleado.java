@@ -5,12 +5,15 @@
  */
 package Clases;
 
+import Back.EmpleadoDAO;
+import java.util.ArrayList;
+
 /**
  *
  * @author Piero
  */
 
-public class Empleado {
+public class Empleado extends EmpleadoDAO{
     private String dni;
     private String nombre_completo;
     private String direccion;
@@ -22,13 +25,13 @@ public class Empleado {
     private String fecha_nacimiento;
     private String cuenta_banco;
     private String afp;
-    private String codigo_entrevista;
+    private Integer codigo_entrevista;
     private String nombre_tienda;
 
     public Empleado() {
     }
 
-    public Empleado(String dni, String nombre_completo, String direccion, Integer edad, String ciudad, String distrito, String correo, String telefono, String fecha_nacimiento, String cuenta_banco, String afp, String codigo_entrevista, String nombre_tienda) {
+    public Empleado(String dni, String nombre_completo, String direccion, Integer edad, String ciudad, String distrito, String correo, String telefono, String fecha_nacimiento, String cuenta_banco, String afp, Integer codigo_entrevista, String nombre_tienda) {
         this.dni = dni;
         this.nombre_completo = nombre_completo;
         this.direccion = direccion;
@@ -132,11 +135,11 @@ public class Empleado {
         this.afp = afp;
     }
 
-    public String getCodigo_entrevista() {
+    public Integer getCodigo_entrevista() {
         return codigo_entrevista;
     }
 
-    public void setCodigo_entrevista(String codigo_entrevista) {
+    public void setCodigo_entrevista(Integer codigo_entrevista) {
         this.codigo_entrevista = codigo_entrevista;
     }
 
@@ -153,7 +156,15 @@ public class Empleado {
         return "Empleado{" + "dni=" + dni + ", nombre_completo=" + nombre_completo + ", direccion=" + direccion + ", edad=" + edad + ", ciudad=" + ciudad + ", distrito=" + distrito + ", correo=" + correo + ", telefono=" + telefono + ", fecha_nacimiento=" + fecha_nacimiento + ", cuenta_banco=" + cuenta_banco + ", afp=" + afp + ", codigo_entrevista=" + codigo_entrevista + ", nombre_tienda=" + nombre_tienda + '}';
     }
 
+    public static ArrayList<Empleado> leer(){
+        Empleado foobar = new Empleado();
+        return foobar.read();
+        
+    }
     
-    
+    public static void insertarEmpleado(Empleado empleado){
+        Empleado foobar = new Empleado();
+        foobar.insert(empleado);
+    }
     
 }

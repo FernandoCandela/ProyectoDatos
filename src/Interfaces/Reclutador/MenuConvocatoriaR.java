@@ -20,21 +20,27 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
     public MenuConvocatoriaR() {
         initComponents();
         this.setLocationRelativeTo(null);
-//        conv1=Convocatoria.makeConvocatoriaList();
+        
+          //funcion para leer los convocatorias
+          //Convocatoria.makeConvocatoriaList();
+          //  
+        
+        conv1=Convocatoria.makeConvocatoriaList();
 //        
-//        jLabel2.setText(conv1.get(conv1.size()-1).getId_convocatoria());
-//        jTextArea2.setText(conv1.get(conv1.size()-1).getDescripcion());
-//        jLabel3.setText(conv1.get(conv1.size()-2).getId_convocatoria());
-//        jTextArea3.setText(conv1.get(conv1.size()-2).getDescripcion());
-//        jLabel4.setText(conv1.get(conv1.size()-3).getId_convocatoria());
-//        jTextArea1.setText(conv1.get(conv1.size()-3).getDescripcion());
-//        jLabel5.setText(conv1.get(conv1.size()-4).getId_convocatoria());
-//        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());
+        jLabel2.setText(conv1.get(conv1.size()-1).getId_convocatoria().toString());
+        jTextArea2.setText(conv1.get(conv1.size()-1).getDescripcion());
+        jLabel3.setText(conv1.get(conv1.size()-2).getId_convocatoria().toString());
+        jTextArea3.setText(conv1.get(conv1.size()-2).getDescripcion());
+        jLabel4.setText(conv1.get(conv1.size()-3).getId_convocatoria().toString());
+        jTextArea1.setText(conv1.get(conv1.size()-3).getDescripcion());
+        jLabel5.setText(conv1.get(conv1.size()-4).getId_convocatoria().toString());
+        jTextArea4.setText(conv1.get(conv1.size()-4).getDescripcion());
     }
     public static String titulo = "";
     public static String descripcion = "";
     public static String fecha = "";
     public static ArrayList<Convocatoria> conv1=new ArrayList();
+    public static Convocatoria convocatoria= new Convocatoria();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,8 +82,10 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en la ciudad de Huancayo.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
+        jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -91,22 +99,28 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
         jTextArea2.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 8 horas diarias de Lunes a Domingo\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Miraflores,\nSan Isidro, Pueblo Libre.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
+        jTextArea2.setWrapStyleWord(true);
         jScrollPane2.setViewportView(jTextArea2);
 
         jTextArea3.setEditable(false);
         jTextArea3.setColumns(20);
         jTextArea3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextArea3.setLineWrap(true);
         jTextArea3.setRows(5);
         jTextArea3.setText("REQUISITOS:\nHombres o mujeres mayores de 18 años.\nCon o Sin experiencia.\nDisponibilidad para trabajar 4 horas diarias de Lunes a Sabado\nen horarios rotativos entre las 7a.m. y 11p.m.\nDisponibilidad para laborar en estos distritos: Cercado de Lima,\nSanta Anita, San Juan de Lurigancho.\nDisponibilidad para realizar capacitaciones previas al ingreso\na laborar.");
+        jTextArea3.setWrapStyleWord(true);
         jScrollPane3.setViewportView(jTextArea3);
 
         jTextArea4.setEditable(false);
         jTextArea4.setColumns(20);
         jTextArea4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextArea4.setLineWrap(true);
         jTextArea4.setRows(5);
         jTextArea4.setText("No hay convocatoria en este momento");
+        jTextArea4.setWrapStyleWord(true);
         jScrollPane4.setViewportView(jTextArea4);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -321,6 +335,25 @@ public class MenuConvocatoriaR extends javax.swing.JFrame {
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         //poner el codigo para subir a la base de datos
+        
+        Integer id1 = Integer.valueOf(jLabel2.getText());
+        String description1= jTextArea2.getText();
+        convocatoria.updateDescription(id1, description1);
+        
+        Integer id2 = Integer.valueOf(jLabel3.getText());
+        String description2= jTextArea3.getText();
+        convocatoria.updateDescription(id1, description1);
+        
+        Integer id3 = Integer.valueOf(jLabel4.getText());
+        String description3= jTextArea1.getText();
+        convocatoria.updateDescription(id1, description1);
+        
+        Integer id4 = Integer.valueOf(jLabel5.getText());
+        String description4= jTextArea4.getText();
+        convocatoria.updateDescription(id1, description1);
+        
+        
+        
         jTextArea1.setEditable(false);
         jTextArea2.setEditable(false);
         jTextArea3.setEditable(false);

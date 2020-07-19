@@ -19,10 +19,10 @@ public class MenuInicial extends javax.swing.JFrame {
     public MenuInicial() {
         initComponents();
         this.setLocationRelativeTo(null);
-//        conv1=Convocatoria.makeConvocatoriaList();
+        conv1=Convocatoria.makeConvocatoriaList();
         
         //prueba
-        Convocatoria c1 = new Convocatoria(703,"20/07/2001","pruebaaa");
+        /*Convocatoria c1 = new Convocatoria(703,"20/07/2001","pruebaaa");
         Convocatoria c2 = new Convocatoria(709,"25/07/2002","pruebaaaaaaaa");
         Convocatoria c3 = new Convocatoria(710,"25/07/2003","pruebaaaaaaaaa");
         Convocatoria c4 = new Convocatoria(711,"25/07/2004","pruebaaaaaaaaaa");
@@ -31,7 +31,7 @@ public class MenuInicial extends javax.swing.JFrame {
         conv1.add(c2);
         conv1.add(c3);
         conv1.add(c4);
-        conv1.add(c5);
+        conv1.add(c5);*/
         
         txtId1.setText(Integer.toString(conv1.get(conv1.size()-1).getId_convocatoria()));
         txtConv1.setText(conv1.get(conv1.size()-1).getDescripcion());

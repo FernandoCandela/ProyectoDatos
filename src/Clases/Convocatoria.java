@@ -62,5 +62,9 @@ public class Convocatoria extends ConvocatoriaDAO {
         conv.insert(convocatoria);
         
     }
+    public static void update(Integer id_convocatoria,String description){
+        Convocatoria foobar = new Convocatoria();
+        foobar.updateDescription(id_convocatoria,description);
+    }
 }
 

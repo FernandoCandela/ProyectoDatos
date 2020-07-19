@@ -27,14 +27,9 @@ public class MenuConvocatoria extends javax.swing.JFrame {
         txtFechaConvocatoria.setText(menu.fecha);
         
         //funcion para hacer lista de puestos
-        //Puesto.makePuestoList();
+        puestos=Puesto.makePuestoList();
         
-        Puesto p1 = new Puesto("01","Vendedor",900,"7-12am");
-        Puesto p2 = new Puesto("03","Vendedor part",100,"11-12am");
-        Puesto p3 = new Puesto("04","Admin",300,"8-12am");
-        puestos.add(p1);
-        puestos.add(p2);
-        puestos.add(p3);
+        
         
         for (int i = 0; i < puestos.size(); i++) {
             jComboBox1.addItem(puestos.get(i).getNombre());

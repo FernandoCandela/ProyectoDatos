@@ -5,6 +5,8 @@
  */
 package Interfaces.Reclutador;
 
+import Clases.Postulante;
+import Clases.Postulante_habilidad;
 import Clases.Puesto;
 import static Interfaces.Reclutador.ListaPostulantes.pSelec;
 import static Intrefaces.Postulante.MenuConvocatoria.puestos;
@@ -24,12 +26,18 @@ public class FichaEntrevista extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         ListaPostulantes listaP = new ListaPostulantes();
         puestos.clear();
-        Puesto p1 = new Puesto("01","Vendedor",900,"7-12am");
-        Puesto p2 = new Puesto("03","Vendedor part",100,"11-12am");
-        Puesto p3 = new Puesto("04","Admin",300,"8-12am");
-        puestos.add(p1);
-        puestos.add(p2);
-        puestos.add(p3);
+       
+        
+       
+        
+        //funcion para leer los puestos
+        puestos=Puesto.makePuestoList();
+        
+        //funcion para actualizar el peusto
+        //Postulante.actualizar_puesto(dni_postulante, puesto); pasar como parametro el dni en String y el Puesto en String
+        
+        //funcion para Insertar una Habilidad al Postulante
+        //Postulante_habilidad.inesrtar(postulante_habilidad); pasar como parametro un Objeto de Postulante_Habilidad
         
         for (int i = 0; i < puestos.size(); i++) {
             jComboBox1.addItem(puestos.get(i).getNombre());
@@ -269,31 +277,49 @@ public class FichaEntrevista extends javax.swing.JFrame {
             if(dialogResult == JOptionPane.YES_OPTION){
             // DNI DEL POSTULANTE SELECCIONADO ANTES
             String dniPostulanteActual = pSelec.getDni();
-            int aprobado = -1;
+      
             String puesto = (String) jComboBox1.getSelectedItem();
             if (jRadioButton1.isSelected()) {
-                aprobado = 1;
+                Postulante.aprobar_postulante( dniPostulanteActual);
             } else if (jRadioButton2.isSelected()) {
-                aprobado = 0;
+                
             }
             if (jCheckBox1.isSelected()) {
                 //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'LIDERAZ'
+                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"LIDERAZ");
+                Postulante_habilidad.inesrtar(a1);
             }
             if (jCheckBox2.isSelected()) {
                 //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'CREATIV'
+                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"CREATIV");
+                Postulante_habilidad.inesrtar(a1);
             }
             if (jCheckBox3.isSelected()) {
                 //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'TRAB_EQ'
+                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"TRAB_EQ");
+                Postulante_habilidad.inesrtar(a1);
             }
             if (jCheckBox4.isSelected()) {
                 //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'COMUNIC'
+                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"COMUNIC");
+                Postulante_habilidad.inesrtar(a1);
             }
             if (jCheckBox5.isSelected()) {
                 //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'EMPATIC'
+                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"EMPATIC");
+                Postulante_habilidad.inesrtar(a1);
             }
             if (jCheckBox6.isSelected()) {
                 //INSERT INTO POSTULANTE-HABILIDAD CON EL DNI, COD 'PROACT'
+                Postulante_habilidad a1 = new Postulante_habilidad(dniPostulanteActual,"PROACT");
+                Postulante_habilidad.inesrtar(a1);
             }
+             //funcion para aprobar a postulante
+            Postulante.actualizar_puesto(dniPostulanteActual, puesto);
+            
+            
+            
+        
             JOptionPane.showMessageDialog(null, "Guardado exitosamente");
             ListaPostulantes listaP = new ListaPostulantes();
             listaP.setVisible(true);

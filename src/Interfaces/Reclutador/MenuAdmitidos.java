@@ -23,16 +23,13 @@ public class MenuAdmitidos extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         post1.clear();
-        //postulantes de prueba
-        Postulante p1 = new Postulante("70366387","Paloma Vallejo","Jr. Casuarianas Altas",19,"1","Lima","Surco","Vendedor Full-Time","Computrabajo","paloma@hotmail.com","999999999","20/07/2001",0003,"0001");
-        Postulante p2 = new Postulante("70948592","Daniela Acevedo","Av. Proceres",19,"1","Lima","Surco","Vendedor Part-Time","Indeed","daniela@hotmail.com","999999999","25/07/2001",0004,"0001");
-        post1.add(p1);
-        post1.add(p2);
         
-        Convocatoria c1 = new Convocatoria(0004, "01/08/2020", "PRUEBAAAAA");
-        Convocatoria c2 = new Convocatoria(0003, "04/05/2020", "PRUEBAAAAA");
-        convocatorias.add(c1);
-        convocatorias.add(c2);
+        //funcion para leer los postulantes admitidos
+        post1=Postulante.leer_postulante_aprobado();
+        
+        convocatorias=Convocatoria.makeConvocatoriaList();
+        
+        
         //falta conectar el arraylist post1 a la base de datos
         //POSTULANTES TIENEN QUE TENER APROBADO EN 1 PARA SER ADMITIDOS
         //Falta poner la fecha de la conv del postulante

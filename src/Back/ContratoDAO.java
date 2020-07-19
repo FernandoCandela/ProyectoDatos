@@ -43,7 +43,7 @@
                                     rs.getString(TCONTRATO_FECHA_FIN),
                                     rs.getString(TCONTRATO_TIPO),
                                     rs.getString(TCONTRATO_HORARIO),
-                                    rs.getString(TCONTRATO_SALARIO_BRUTO),
+                                    Integer.valueOf(rs.getString(TCONTRATO_SALARIO_BRUTO)),
                                     rs.getString(TCONTRATO_PUESTO),
                                     rs.getString(TCONTRATO_DNI));
                   contratos.add(contrato);
@@ -67,8 +67,8 @@
                         + contrato.getFecha_inicio() + "', '"
                         + contrato.getFecha_fin() + "', '"
                         + contrato.getTipo() + "', '"
-                        + contrato.getHorario() + "', '"
-                        + contrato.getSalario() + "', '"
+                        + contrato.getHorario() + "', "
+                        + contrato.getSalario() + ", '"
                         + contrato.getPuesto() + "', '"
                         + contrato.getDNI()+ "')";
 

@@ -29,8 +29,7 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         MenuInicial menu = new  MenuInicial();
         MenuConvocatoria menuC = new MenuConvocatoria();
         
-        //Funcion para crear postulante 
-        //Postulante.crear_Postulante(postulante); - pasar objeto postulante como parametro
+        
         
         jLabel1.setText("Convocatoria "+menu.titulo);
         jLabel12.setText("Puesto: "+menuC.puesto);
@@ -249,7 +248,7 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
 
         jMedioCon.setBackground(new java.awt.Color(255, 204, 0));
         jMedioCon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jMedioCon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por medio de redes sociales", "Por medio de afiches", "Por medio de un amigo", "Bumeran", "Computrabajo", "Otros" }));
+        jMedioCon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Redes sociales", "Afiches", "Un amigo", "Bumeran", "Computrabajo", "Otros" }));
         jMedioCon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMedioConActionPerformed(evt);
@@ -402,8 +401,9 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         postulante.setDireccion(jDireccion.getText());
         postulante.setId_convocatoria(Integer.parseInt(titulo));
         postulante.setMedio_convocatoria((String)jMedioCon.getSelectedItem());
-        postulante.setAprobado("0");
+        postulante.setAprobado("NO");
         postulante.setPuesto_potencial(puesto);
+        postulante.setCod_entrevista(1);
         
         // Jala la fecha del objeto y la convierte a string
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -419,8 +419,12 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         int edad = periodo.getYears();
         
         postulante.setEdad(edad);
+        //Funcion para crear postulante 
+        //Postulante.crear_Postulante(postulante); - pasar objeto postulante como parametro
         
+        Postulante.crear_Postulante(postulante);
         // FALTA ASIGNAR CODIGO DE ENTREVISTA (LO ASIGNA AUTOMATICAMENTE LA BD???)
+        
         JOptionPane.showMessageDialog(null, "Postulación realizada con éxito!");
         MenuConvocatoria menuC = new MenuConvocatoria();
         menuC.setVisible(true);
