@@ -19,7 +19,7 @@ public class DataBase {
     public static final String TCONTRATO_TIPO="TIPO";
     public static final String TCONTRATO_HORARIO="HORARIO";
     public static final String TCONTRATO_SALARIO_BRUTO="SALARIO_BRUTO";
-    public static final String TCONTRARO_PUESTO="PUESTO";
+    public static final String TCONTRATO_PUESTO="PUESTO";
     public static final String TCONTRATO_DNI="DNI";
     
     //CONVOCATORIA
