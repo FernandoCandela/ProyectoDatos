@@ -6,6 +6,7 @@
 package Interfaces.Reclutador;
 
 import Clases.Empleado;
+import Clases.Postulante;
 import Clases.Tienda;
 import static Interfaces.Reclutador.MenuAdmitidos.p1;
 import java.util.ArrayList;
@@ -23,6 +24,15 @@ public class FichaAdmitidos extends javax.swing.JFrame {
     public FichaAdmitidos() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        //funcion para leer las tiendas
+        //Tienda.makeTiendaList();
+        
+        //funcion para crear empleado 
+        //
+        
+        //funcion para borrar postulante
+        //Postulante.removerPostulante(dni_postulante);//pasar como parametro el dni del postulatne a eliminar como String
         
         txtNombre.setText(p1.getNombre());
         txtPuesto.setText(p1.getPuesto_potencial());
@@ -44,6 +54,8 @@ public class FichaAdmitidos extends javax.swing.JFrame {
         for (int i = 0; i < tiendas.size(); i++) {
             jComboBox1.addItem(tiendas.get(i).getNombre());
         }
+        
+        
     }
     public static ArrayList<Tienda> tiendas = new ArrayList();
     /**

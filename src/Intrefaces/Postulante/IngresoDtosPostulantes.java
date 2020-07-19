@@ -29,6 +29,9 @@ public class IngresoDtosPostulantes extends javax.swing.JFrame {
         MenuInicial menu = new  MenuInicial();
         MenuConvocatoria menuC = new MenuConvocatoria();
         
+        //Funcion para crear postulante 
+        //Postulante.crear_Postulante(postulante); - pasar objeto postulante como parametro
+        
         jLabel1.setText("Convocatoria "+menu.titulo);
         jLabel12.setText("Puesto: "+menuC.puesto);
        

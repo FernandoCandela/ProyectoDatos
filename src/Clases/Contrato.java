@@ -5,11 +5,13 @@
  */
 package Clases;
 
+import Back.ContratoDAO;
+
 /**
  *
  * @author Renatto
  */
-public class Contrato {
+public class Contrato extends ContratoDAO{
     private String codigo;
     private String fecha_inicio;
     private String fecha_fin;
@@ -97,5 +99,9 @@ public class Contrato {
         this.DNI = DNI;
     }
     
+    public static void insertarContrato(Contrato contrato){
+        Contrato foobar = new Contrato();
+        foobar.insert(contrato);
+    }
     
 }

@@ -11,14 +11,14 @@ package Clases;
  */
 public class Postulante_habilidad {
     private String DNI;
-    private String codigo_habildiad;
+    private String codigo_habilidad;
 
     public Postulante_habilidad() {
     }
 
-    public Postulante_habilidad(String DNI, String codigo_habildiad) {
+    public Postulante_habilidad(String DNI, String codigo_habilidad) {
         this.DNI = DNI;
-        this.codigo_habildiad = codigo_habildiad;
+        this.codigo_habilidad = codigo_habilidad;
     }
 
     public String getDNI() {
@@ -29,12 +29,13 @@ public class Postulante_habilidad {
         this.DNI = DNI;
     }
 
-    public String getCodigo_habildiad() {
-        return codigo_habildiad;
+    public String getCodigo_habilidad() {
+        return codigo_habilidad;
     }
 
-    public void setCodigo_habildiad(String codigo_habildiad) {
-        this.codigo_habildiad = codigo_habildiad;
+    public void setCodigo_habilidad(String codigo_habilidad) {
+        this.codigo_habilidad = codigo_habilidad;
     }
+    
     
 }

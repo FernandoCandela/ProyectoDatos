@@ -5,6 +5,9 @@
  */
 package Clases;
 
+import Back.PostulanteDAO;
+import java.util.ArrayList;
+
 /**
  *
  * @author Piero
@@ -27,7 +30,7 @@ public static final String TPOSTULANTE="POSTULANTE";
     public static final String TPOSTULANTE_ENTREVISTA="CODIGO_ENTREVISTA";
 */
 
-public class Postulante {
+public class Postulante extends PostulanteDAO{
     private String dni;
     private String nombre;
     private String direccion;
@@ -97,7 +100,7 @@ public class Postulante {
         this.edad = edad;
     }
 
-    public String isAprobado() {
+    public String getAprobado() {
         return aprobado;
     }
 
@@ -182,7 +185,30 @@ public class Postulante {
         return "Postulante{" + "dni=" + dni + ", nombre=" + nombre + ", direccion=" + direccion + ", edad=" + edad + ", aprobado=" + aprobado + ", ciudad=" + ciudad + ", distrito=" + distrito + ", puesto_potencial=" + puesto_potencial + ", medio_convocatoria=" + medio_convocatoria + ", correo=" + correo + ", telefono=" + telefono + ", fecha_nac=" + fecha_nac + ", id_convocatoria=" + id_convocatoria + ", cod_entrevista=" + cod_entrevista + '}';
     }
 
+    public static void crear_Postulante(Postulante postulante){
+        Postulante foobar= new Postulante();
+        foobar.insertarPostulante(postulante);
+    }
     
+    public static ArrayList<Postulante> leer_postulantes_por_convocatoria(String id_convocatoria){
+        Postulante foobar=new Postulante();
+        return foobar.readByConvocatoria(id_convocatoria);
+    }
     
-    
+    public static void aprobar_postulante(String dni_postulante){
+        Postulante foobar= new Postulante();
+        foobar.aprobarPostulante(dni_postulante);
+    }
+    public static void actualizar_puesto(String dni_postulante,String puesto){
+        Postulante foobar= new Postulante();
+        foobar.updatePuesto(dni_postulante, puesto);
+    }
+    public static ArrayList <Postulante> leer_postulante_aprobado(){
+        Postulante foobar=new Postulante();
+        return foobar.readIfApproved();
+    }
+    public static void removerPostulante(String dni_postulante){
+        Postulante foobar= new Postulante();
+        foobar.removePostulante(dni_postulante);
+    }
 }
