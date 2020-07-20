@@ -279,7 +279,7 @@ public class FichaEntrevista extends javax.swing.JFrame {
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
 
         if (jRadioButton1.isSelected() || jRadioButton2.isSelected()) {
-            int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea contratar al empleado?");
+            int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea admitir al postulante?");
             if (dialogResult == JOptionPane.YES_OPTION) {
                 // DNI DEL POSTULANTE SELECCIONADO ANTES
                 String dniPostulanteActual = pSelec.getDni();
@@ -349,7 +349,7 @@ public class FichaEntrevista extends javax.swing.JFrame {
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         // TODO add your handling code here:
-
+        
         buttonGroup1.clearSelection();
         jComboBox1.setSelectedIndex(0);
         jCheckBox1.setSelected(false);

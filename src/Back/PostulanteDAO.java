@@ -146,7 +146,7 @@ public class PostulanteDAO extends Conexion{
            String query = "DELETE FROM " + TPOSTULANTE + " WHERE " + TPOSTULANTE_DNI +" = '" + dni_postulante + "'";
            PreparedStatement preparedStatement = connection. prepareStatement(query);
            preparedStatement.executeQuery();
-               
+           
        }catch(SQLException e){
            e.printStackTrace();
        }
